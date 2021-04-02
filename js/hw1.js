@@ -113,3 +113,32 @@ function checkYear(){
 
     document.getElementById("year_result").innerHTML = result;  
 }
+
+function checkPalindrom(){
+    let number = Number(document.getElementById("palindrom").value);
+    let result;
+
+    if (Number.isNaN(number)){
+        result = 'Будь ласка введіть число'
+    }     
+    // Double conversion to make sure wthat e have a number with 3 digits in
+    else if (String(number).length != 5) {
+        result = 'Будь ласка введіть число з 5х цифр'
+    }
+    else{
+        digit1 = String(number)[0];
+        digit2 = String(number)[1];
+        digit3 = String(number)[2];
+        digit4 = String(number)[3];
+        digit5 = String(number)[4];
+    
+        if (digit1 == digit5 && digit2 == digit4){
+            result = 'Це число є паліндромом'
+        }
+        else{
+            result = 'Це число не є паліндромом'
+        }
+    }
+
+    document.getElementById("palindrom_result").innerHTML = result;  
+}
