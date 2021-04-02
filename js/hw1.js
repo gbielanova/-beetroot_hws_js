@@ -96,3 +96,20 @@ function checkNumber(){
 
     document.getElementById("number_3x_result").innerHTML = result;  
 }
+
+function checkYear(){
+    let year = Number(document.getElementById("year").value);
+    let result;
+
+    if (year % 4 != 0){
+        result = 'Цей рік є звичайним';
+    } else if  (year % 100 != 0){
+        result = 'Цей рік є високосним';
+    } else if (year % 400 != 0){        
+        result = 'Цей рік є високосним';
+    } else {
+        result = 'Цей рік є високосним'; 
+    }
+
+    document.getElementById("year_result").innerHTML = result;  
+}
