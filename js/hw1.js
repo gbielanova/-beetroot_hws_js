@@ -57,7 +57,9 @@ function getSymbol() {
             break;        
         case 9:
             symbol = "("; 
-            break;        
+            break;
+        // No need to default since we are using select as input but nice to have a fallback 
+        // in case function will be used with other element    
         default:
             symbol = "Введіть цифру від 0 до 9"; 
             break;      
