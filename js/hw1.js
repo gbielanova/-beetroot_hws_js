@@ -186,3 +186,41 @@ function calcDiscount(){
 
     document.getElementById("amount_result").innerHTML = `До сплати ${(amount * discount).toFixed(2)}`;  
 }
+
+function isCircleIn(){
+    const PI = 3.1415;
+    let diameter = Number(document.getElementById("c").value) / PI;
+    let side = Number(document.getElementById("p").value) / 4;
+
+    if (side >= diameter){
+        document.getElementById("check_result").innerHTML = 'Така окружність може бути в квадраті';  
+    } else{
+        document.getElementById("check_result").innerHTML = 'Така окружність не може бути в квадраті';  
+    }
+}
+
+function quizz(){
+    let q1 = document.getElementById("question1").value;
+    let q2 = document.getElementById("question2").value;
+    let q3 = document.getElementById("question3").value;
+    let result = 0;
+
+    if (q1 == '0'){
+        result += 2;
+    }
+    if (q2 == '1'){
+        result += 2;
+    }
+    if (q3 == '1'){
+        result += 2;
+    }
+
+    document.getElementById("quizz_results").innerHTML = `Ваш результат ${result}`;  
+}
+
+function getNextDay(){
+    let day = new Date(document.getElementById("date").value);
+    let nextDay = new Date(day);
+    nextDay.setDate(day.getDate() + 1);
+    document.getElementById("next_day").innerHTML = `Наступним буде ${nextDay}`;  
+}

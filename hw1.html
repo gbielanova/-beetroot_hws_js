@@ -94,5 +94,64 @@
       </button>
       <p id="amount_result"></p>
     </section>
+    <section>
+      <h4>
+        Запитати у користувача довжину окружності та періметр квадрату. Чи може
+        така окружність бути в квадрат?
+      </h4>
+      <label>Введіть довжину окружності: <input type="text" id="c" /></label>
+      <label>Введіть періметр квадрату: <input type="text" id="p" /></label>
+      <button onclick="isCircleIn()">Натисність, щоб перевірити</button>
+      <p id="check_result"></p>
+    </section>
+    <section>
+      <h4>
+        Задати користувачу 3 питання, у кожному питання по 3 варіанти
+        відповідей. За кожну вірну відповідь нарахувати 2 бали. Вивести
+        кількість набраний балів.
+      </h4>
+      <label class="quizz"
+        >Яка вага цього селектора? nav a:hover::before
+        <select id="question1" name="question1">
+          <option disabled selected value>-- оберіть відповідь --</option>
+          <!-- correct -->
+          <option value="0">0 1 3</option>
+          <option value="1">0 1 2</option>
+          <option value="2">0 2 1</option>
+        </select></label
+      >
+      <label class="quizz"
+        >Яка вага цього селектора? ul#primary-nav li.active
+        <select id="question2" name="question2">
+          <option disabled selected value>-- оберіть відповідь --</option>
+          <option value="0">1 1 3</option>
+          <!-- correct -->
+          <option value="1">1 1 2</option>
+          <option value="2">1 2 1</option>
+        </select></label
+      >
+      <label class="quizz"
+        >Яка вага цього селектора? #a.a:hover
+        <select id="question3" name="question3">
+          <option disabled selected value>-- оберіть відповідь --</option>
+          <option value="0">1 1 1</option>
+          <!-- correct -->
+          <option value="1">1 2 0</option>
+          <option value="2">0 2 1</option>
+        </select></label
+      >
+      <button onclick="quizz()">Натисність, щоб отримати результат</button>
+      <p id="quizz_results"></p>
+    </section>
+    <section>
+      <h4>
+        Запитайте дату(день, місяц, рік) та виведіть наступну за нею дату.
+      </h4>
+      <label>Оберіть дату <input type="date" id="date" /></label>
+      <button onclick="getNextDay()">
+        Натисність, щоб отримати наступний день
+      </button>
+      <p id="next_day"></p>
+    </section>
   </body>
 </html>

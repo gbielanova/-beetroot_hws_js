@@ -24,4 +24,8 @@ section p {
   color: maroon;
   font-weight: bold;
 }
+
+.quizz {
+  display: block;
+}
 /*# sourceMappingURL=styles.css.map */
