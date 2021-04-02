@@ -142,3 +142,28 @@ function checkPalindrom(){
 
     document.getElementById("palindrom_result").innerHTML = result;  
 }
+
+function exchange(){
+    let number = Number(document.getElementById("usd").value);
+    let currency = document.getElementById("currency").value
+    // exchange rate to 02/02/2021
+    const RATE_EUR = 0.85;
+    const RATE_UAH = 27.76;
+    const RATE_AZN = 1.7;
+
+    let result;
+
+    switch (currency){
+        case 'EUR': 
+            result = number * RATE_EUR;
+            break;
+        case 'UAH': 
+            result = number * RATE_UAH;
+            break;
+        case 'AZN': 
+            result = number * RATE_AZN;
+            break;
+    }
+
+    document.getElementById("exchange_result").innerHTML = `Конвертована сумма складає ${result} ${currency}`;  
+}

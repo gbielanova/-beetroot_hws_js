@@ -67,5 +67,20 @@
       <button onclick="checkPalindrom()">Натисність, щоб перевірити</button>
       <p id="palindrom_result"></p>
     </section>
+    <section>
+      <h4>
+        Написати конвертор валют. Користувач вводить сумму в USD, обирає в яку
+        валюту хоче перевести EUR, UAN чи AZN, й отримує у відповідь відповідну
+        сумму.
+      </h4>
+      <label>Введіть сумму в USD: <input type="text" id="usd" /></label>
+      <select id="currency" name="currency">
+        <option value="EUR">EUR</option>
+        <option value="UAH">UAH</option>
+        <option value="AZN">AZN</option>
+      </select>
+      <button onclick="exchange()">Натисність, щоб перевірити</button>
+      <p id="exchange_result"></p>
+    </section>
   </body>
 </html>
