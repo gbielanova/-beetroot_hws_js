@@ -167,3 +167,22 @@ function exchange(){
 
     document.getElementById("exchange_result").innerHTML = `Конвертована сумма складає ${result} ${currency}`;  
 }
+
+function calcDiscount(){
+    let amount = Number(document.getElementById("amount").value);
+    let discount = 1;
+
+    switch(true) {
+        case (amount >= 200 && amount < 300):
+            discount = 0.97; 
+            break;
+        case (amount >= 300 && amount < 500):
+            discount = 0.95; 
+            break;   
+        case (amount >= 500):
+            discount = 0.93; 
+            break;   
+        }
+
+    document.getElementById("amount_result").innerHTML = `До сплати ${(amount * discount).toFixed(2)}`;  
+}

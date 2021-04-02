@@ -79,8 +79,20 @@
         <option value="UAH">UAH</option>
         <option value="AZN">AZN</option>
       </select>
-      <button onclick="exchange()">Натисність, щоб перевірити</button>
+      <button onclick="exchange()">Натисність, щоб конвертувати</button>
       <p id="exchange_result"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача сумму покупки та вивести сумму до сплати зі
+        знижкою: від 200 до 300 - знижка 3%, від 300 до 500 - 5%, від 500 та
+        вище - 7%.
+      </h4>
+      <label>Введіть сумму покупки: <input type="text" id="amount" /></label>
+      <button onclick="calcDiscount()">
+        Натисність, щоб отримати фінальну сумму
+      </button>
+      <p id="amount_result"></p>
     </section>
   </body>
 </html>
