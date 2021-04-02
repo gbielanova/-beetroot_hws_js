@@ -67,3 +67,32 @@ function getSymbol() {
 
     document.getElementById("symbol").innerHTML = symbol;  
 }
+
+function checkNumber(){
+    let number = Number(document.getElementById("number_3x").value);
+    let result;
+
+    if (Number.isNaN(number)){
+        result = 'Будь ласка введіть число'
+    }     
+    // Double conversion to make sure wthat e have a number with 3 digits in
+    else if (String(number).length != 3) {
+        result = 'Будь ласка введіть число з 3х цифр'
+    }
+    else{
+        digit1 = number % 10;
+        digit2 = Math.floor(number / 10) % 10;
+        digit3 = Math.floor(number / 100);
+    
+        if (digit1 == digit2 || digit1 == digit3){
+            result = `Цифра ${digit1} повторюється`
+        } else if (digit2 == digit3){
+            result = `Цифра ${digit2} повторюється`
+        }
+        else{
+            result = 'Цифрі в числі унікальні'
+        }
+    }
+
+    document.getElementById("number_3x_result").innerHTML = result;  
+}
