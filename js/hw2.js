@@ -163,3 +163,33 @@ function multTable() {
         document.getElementById(`task8_result${i}`).innerHTML = result;
     }
 }
+
+function guessNumber() {
+    let from = 0;
+    let to = 100;
+    let game_end = false;
+
+    let number;
+
+    while (!game_end) {
+        number = from + Math.floor((to - from) / 2);
+        if (confirm(`Ваше число > ${number}?`)) {
+            if (number < 100) {
+                from = number + 1;
+            }
+        } else if (confirm(`Ваше число < ${number}?`)) {
+            if (number > 0) {
+                to = number - 1;
+            }
+        } else if (confirm(`Ваше число == ${number}?`)) {
+            game_end = true
+        }
+        if (to == from) {
+            game_end = true
+            number = to;
+            (confirm(`Ваше число == ${number}!`))
+        }
+    }
+
+    document.getElementById("task10_result").innerHTML = `Ви загадали ${number}`;
+}
