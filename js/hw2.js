@@ -64,3 +64,49 @@ function getDigits() {
 
     document.getElementById("task4_result").innerHTML = result;
 }
+
+function getStats() {
+    let pos = 0;
+    let neg = 0;
+    let zeros = 0;
+    let odd = 0;
+    let even = 0;
+
+    for (let i = 0; i < 10; i++) {
+        num = Number(prompt('Введіть число'));
+        (num > 0) ? pos++ : (num < 0) ? neg++ : zeros++;
+        (num % 2 == 0) ? even++ : odd++;
+    }
+
+    document.getElementById("task5_result").innerHTML = `Коритувач ввів: 
+    ${pos} позитивних, ${neg} негативних, ${zeros} нулів, ${even} парних, ${odd} не парних`;
+}
+
+function calc() {
+    let result;
+
+    do {
+        let num1 = Number(prompt('Введіть перше число'));
+        let num2 = Number(prompt('Введіть друге число'));
+        let sign = prompt('Введіть операцію (+, -, /, *)');
+        switch (sign) {
+            case ('+'):
+                result = num1 + num2;
+                break;
+            case ('-'):
+                result = num1 - num2;
+                break;
+            case ('*'):
+                result = num1 * num2;
+                break;
+            case ('/'):
+                result = num1 / num2;
+                break;
+            default:
+                result = 'Ця операція не підтримується'
+        }
+
+    }
+    while (confirm(`Результат: ${result}\nХочете порахувати щось ще?`));
+}
+
