@@ -1,0 +1,30 @@
+a {
+  display: block;
+}
+
+section {
+  padding: 10px 0;
+
+  &:nth-child(odd) {
+    background-color: mintcream;
+  }
+
+  &:nth-child(even) {
+    background-color: lightyellow;
+  }
+
+  h4,
+  label,
+  p {
+    margin: 5px;
+  }
+
+  p {
+    color: maroon;
+    font-weight: bold;
+  }
+}
+
+.quizz {
+  display: block;
+}
