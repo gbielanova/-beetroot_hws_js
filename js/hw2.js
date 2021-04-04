@@ -52,3 +52,15 @@ function getDividers() {
 
     document.getElementById("task3_result").innerHTML = result;
 }
+
+function getDigits() {
+    let num = Number(document.getElementById('task4_num').value);
+    let result = 1;
+
+    while (num / 10 >= 1) {
+        result++;
+        num = num / 10;
+    }
+
+    document.getElementById("task4_result").innerHTML = result;
+}
