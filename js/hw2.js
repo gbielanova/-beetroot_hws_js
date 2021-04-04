@@ -35,3 +35,20 @@ function getDivider() {
     document.getElementById("task2_result").innerHTML = result;
 }
 
+function getDividers() {
+    let num = Number(document.getElementById('task3_num').value);
+
+    let result = '';
+    let i = num;
+
+    result += num;
+
+    do {
+        i--;
+        if (num % i == 0) {
+            result += ', ' + i;
+        }
+    } while (i > 0)
+
+    document.getElementById("task3_result").innerHTML = result;
+}
