@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/hw1.js"></script>
+    <title>JS HW 1</title>
+  </head>
+  <body>
+    <section>
+      <h4>
+        Запитати у користувача його вік та визначити ким він є: дитина (0–2),
+        підліток (12–18), дорослий (18-60) чи пенсіонер (60– ...).
+      </h4>
+      <label>Скільки вам років? <input type="text" id="age" /></label>
+      <button onclick="checkStatus()">
+        Натисність, щоб визначити хто ви є!
+      </button>
+      <p id="status"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача цифру від 0 до 9 та вивести спецсимвол що
+        міститься на цій клавіші (1–!, 2–@, 3–# то що).
+      </h4>
+      <label
+        >Яка цифра вас цікавить?
+        <select id="number" name="numbers">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select></label
+      >
+      <button onclick="getSymbol()">Натисність, щоб отримати спецсимвол</button>
+      <p id="symbol"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача трьозначне число та перевірити чи є в ньому
+        однакові цифри.
+      </h4>
+      <label>Введіть число: <input type="text" id="number_3x" /></label>
+      <button onclick="checkNumber()">Натисність, щоб перевірити</button>
+      <p id="number_3x_result"></p>
+    </section>
+    <section>
+      <h4>Запитати у користувача рік та перевірити чи він є високосним.</h4>
+      <label>Введіть рік: <input type="text" id="year" /></label>
+      <button onclick="checkYear()">Натисність, щоб перевірити</button>
+      <p id="year_result"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача п'ятирозрядне число та перевірити чи є воно
+        паліндромом.
+      </h4>
+      <label>Введіть число: <input type="text" id="palindrom" /></label>
+      <button onclick="checkPalindrom()">Натисність, щоб перевірити</button>
+      <p id="palindrom_result"></p>
+    </section>
+    <section>
+      <h4>
+        Написати конвертор валют. Користувач вводить сумму в USD, обирає в яку
+        валюту хоче перевести EUR, UAN чи AZN, й отримує у відповідь відповідну
+        сумму.
+      </h4>
+      <label>Введіть сумму в USD: <input type="text" id="usd" /></label>
+      <select id="currency" name="currency">
+        <option value="EUR">EUR</option>
+        <option value="UAH">UAH</option>
+        <option value="AZN">AZN</option>
+      </select>
+      <button onclick="exchange()">Натисність, щоб конвертувати</button>
+      <p id="exchange_result"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача сумму покупки та вивести сумму до сплати зі
+        знижкою: від 200 до 300 - знижка 3%, від 300 до 500 - 5%, від 500 та
+        вище - 7%.
+      </h4>
+      <label>Введіть сумму покупки: <input type="text" id="amount" /></label>
+      <button onclick="calcDiscount()">
+        Натисність, щоб отримати фінальну сумму
+      </button>
+      <p id="amount_result"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача довжину окружності та періметр квадрату. Чи може
+        така окружність бути в квадрат?
+      </h4>
+      <label>Введіть довжину окружності: <input type="text" id="c" /></label>
+      <label>Введіть періметр квадрату: <input type="text" id="p" /></label>
+      <button onclick="isCircleIn()">Натисність, щоб перевірити</button>
+      <p id="check_result"></p>
+    </section>
+    <section>
+      <h4>
+        Задати користувачу 3 питання, у кожному питання по 3 варіанти
+        відповідей. За кожну вірну відповідь нарахувати 2 бали. Вивести
+        кількість набраний балів.
+      </h4>
+      <label class="quizz"
+        >Яка вага цього селектора? nav a:hover::before
+        <select id="question1" name="question1">
+          <option disabled selected value>-- оберіть відповідь --</option>
+          <!-- correct -->
+          <option value="0">0 1 3</option>
+          <option value="1">0 1 2</option>
+          <option value="2">0 2 1</option>
+        </select></label
+      >
+      <label class="quizz"
+        >Яка вага цього селектора? ul#primary-nav li.active
+        <select id="question2" name="question2">
+          <option disabled selected value>-- оберіть відповідь --</option>
+          <option value="0">1 1 3</option>
+          <!-- correct -->
+          <option value="1">1 1 2</option>
+          <option value="2">1 2 1</option>
+        </select></label
+      >
+      <label class="quizz"
+        >Яка вага цього селектора? #a.a:hover
+        <select id="question3" name="question3">
+          <option disabled selected value>-- оберіть відповідь --</option>
+          <option value="0">1 1 1</option>
+          <!-- correct -->
+          <option value="1">1 2 0</option>
+          <option value="2">0 2 1</option>
+        </select></label
+      >
+      <button onclick="quizz()">Натисність, щоб отримати результат</button>
+      <p id="quizz_results"></p>
+    </section>
+    <section>
+      <h4>
+        Запитайте дату(день, місяц, рік) та виведіть наступну за нею дату.
+      </h4>
+      <label>Оберіть дату <input type="date" id="date" /></label>
+      <button onclick="getNextDay()">
+        Натисність, щоб отримати наступний день
+      </button>
+      <p id="next_day"></p>
+    </section>
+  </body>
+</html>
