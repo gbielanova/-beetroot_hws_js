@@ -121,3 +121,35 @@ function getShiftedNumber() {
 
     document.getElementById("task7_result").innerHTML = result;
 }
+
+function days() {
+    let i = 0;
+    let day;
+    do {
+        switch (i) {
+            case 0:
+                day = "Неділя";
+                break;
+            case 1:
+                day = "Понеділок";
+                break;
+            case 2:
+                day = "Вівторок";
+                break;
+            case 3:
+                day = "Середа";
+                break;
+            case 4:
+                day = "Четвер";
+                break;
+            case 5:
+                day = "П'ятниця";
+                break;
+            case 6:
+                day = "Суббота";
+                break;
+        }
+        (i == 6) ? i = 0 : i++;
+    }
+    while (confirm(`${day}\nХочете побачити наступний день?`));
+}
