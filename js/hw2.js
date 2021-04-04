@@ -153,3 +153,13 @@ function days() {
     }
     while (confirm(`${day}\nХочете побачити наступний день?`));
 }
+
+function multTable() {
+    for (let i = 2; i < 10; i++) {
+        let result = '';
+        for (let j = 1; j <= 10; j++) {
+            result += `${i} * ${j} = ${i * j} || `;
+        }
+        document.getElementById(`task8_result${i}`).innerHTML = result;
+    }
+}
