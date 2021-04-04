@@ -110,3 +110,14 @@ function calc() {
     while (confirm(`Результат: ${result}\nХочете порахувати щось ще?`));
 }
 
+function getShiftedNumber() {
+    let number = Number(document.getElementById('task7_number').value);
+    let shift = Number(document.getElementById('task7_shift').value);
+
+    // in case shift bigger then actual length of the number
+    shift = shift % String(number).length;
+
+    let result = (number % 10 ** (String(number).length - shift)) * 10 ** shift + Math.floor(number / 10 ** (String(number).length - shift));
+
+    document.getElementById("task7_result").innerHTML = result;
+}
