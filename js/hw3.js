@@ -13,3 +13,7 @@ function task2(num) {
 function task3(num1, num2, num3) {
     return num1 * 100 + num2 * 10 + num3;
 }
+
+function task4(num1, num2 = num1) {
+    return num1 * num2;
+}
