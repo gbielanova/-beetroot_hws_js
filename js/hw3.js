@@ -46,10 +46,16 @@ function task7(hh = '00', min = '00', sec = '00') {
     (hh == '') ? hh = '00' : hh;
     (min == '') ? min = '00' : min;
     (sec == '') ? sec = '00' : sec;
-    console.log(hh, min, sec);
     return `${hh}:${min}:${sec}`;
 }
 
 function task8(hh, min, sec) {
     return Number(hh) * 60 * 60 + Number(min) * 60 + Number(sec);
+}
+
+function task9(sec) {
+    hh = Math.floor(sec / 3600);
+    min = Math.floor(sec % 3600 / 60);
+    sec = sec % 60;
+    return `${hh}:${min}:${sec}`;
 }

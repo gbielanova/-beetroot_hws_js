@@ -181,44 +181,18 @@
     </section>
     <section>
       <h4>
-        Написати функцію, яка приймає час (години, хвилини, секунди) та повертає
-        час в секундах.
+        Написати функцію, яка приймає кількість секунд, переводить в години та
+        хвилини та повертає в форматі &lt&lthh:mm:ss&gt&gt.
       </h4>
-      <label>Введіть числа: <input type="text" id="task8_hh" /></label>
-      <label>: <input type="text" id="task8_min" /></label>
-      <label>: <input type="text" id="task8_sec" /></label>
+      <label>Введіть числа: <input type="text" id="task9_sec" /></label>
       <h5>
-        Час в секундах:
-        <span id="task8_result">
+        Форматований час:
+        <span id="task9_result">
           <script>
-            document.getElementById("task8_hh").addEventListener(
+            document.getElementById("task9_sec").addEventListener(
               "keyup",
               function (evt) {
-                document.getElementById("task8_result").innerHTML = task8(
-                  this.value,
-                  document.getElementById("task8_min").value,
-                  document.getElementById("task8_sec").value
-                );
-              },
-              false
-            );
-            document.getElementById("task8_min").addEventListener(
-              "keyup",
-              function (evt) {
-                document.getElementById("task8_result").innerHTML = task8(
-                  document.getElementById("task8_hh").value,
-                  this.value,
-                  document.getElementById("task8_sec").value
-                );
-              },
-              false
-            );
-            document.getElementById("task8_sec").addEventListener(
-              "keyup",
-              function (evt) {
-                document.getElementById("task8_result").innerHTML = task8(
-                  document.getElementById("task8_hh").value,
-                  document.getElementById("task8_min").value,
+                document.getElementById("task9_result").innerHTML = task9(
                   this.value
                 );
               },
