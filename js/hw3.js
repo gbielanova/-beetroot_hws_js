@@ -17,3 +17,15 @@ function task3(num1, num2, num3) {
 function task4(num1, num2 = num1) {
     return num1 * num2;
 }
+
+function task5(num) {
+    let sum = 0;
+
+    for (let i = 1; i < num; i++) {
+        if (num % i == 0) {
+            sum += i;
+        }
+    }
+
+    return sum === num;
+}
