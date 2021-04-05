@@ -29,3 +29,15 @@ function task5(num) {
 
     return sum === num;
 }
+
+function task6(num1, num2) {
+    let result = [];
+
+    for (let i = num1; i <= num2; i++) {
+        if (task5(i)) {
+            result.push(i);
+        }
+    }
+
+    return result;
+}
