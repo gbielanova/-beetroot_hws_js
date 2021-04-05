@@ -15,11 +15,13 @@ section {
 
   h4,
   label,
-  p {
+  p,
+  h5 {
     margin: 5px;
   }
 
-  p {
+  p,
+  span {
     color: maroon;
     font-weight: bold;
   }

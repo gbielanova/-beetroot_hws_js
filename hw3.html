@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/hw3.js"></script>
+    <title>JS HW 3</title>
+  </head>
+  <body>
+    <section>
+      <h4>Написати функцію, яка приймає 2 числа та повертає</h4>
+      <h5>
+        <span>
+          <script>
+            document.write(task1(1, 10));
+          </script>
+        </span>
+        якщо перше менше за друге
+      </h5>
+      <h5>
+        <span>
+          <script>
+            document.write(task1(10, 1));
+          </script>
+        </span>
+        якщо перше більше за друге
+      </h5>
+      <h5>
+        <span>
+          <script>
+            document.write(task1(1, 1));
+          </script>
+        </span>
+        якщо числа рівні
+      </h5>
+    </section>
+    <section>
+      <h4>Написати функцію, яка вираховує факторіал переданого числа</h4>
+      <label>Введіть число: <input type="text" id="task2_number" /></label>
+      <h5>
+        Факторіал введеного числа:
+        <span id="task2_result">
+          <script>
+            document.getElementById("task2_number").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task2_result").innerHTML = task2(
+                  this.value
+                );
+              },
+              false
+            );
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка приймає три окремих цифри та перетворює їх в одне
+        ціле
+      </h4>
+      <h5>
+        Наприклад: цифри 1, 4, 9 перетворюються в число
+        <span>
+          <script>
+            document.write(task3(1, 4, 9));
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка приймає довжину та ширину прямокутника та
+        вираховує площу. Якщо передали 1 параметр, то повертається площа
+        квадрата.
+      </h4>
+      <h5>
+        Наприклад: 10, 20 дають площу
+        <span>
+          <script>
+            document.write(task4(10, 20));
+          </script>
+        </span>
+      </h5>
+      <h5>
+        Наприклад: 10 дає площу
+        <span>
+          <script>
+            document.write(task4(10));
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка перевіряє чи є число досконалим. Досконале число
+        таке число, що дорівнює суммі всіх своїх дільників.
+      </h4>
+      <h5>
+        Наприклад: 496
+        <span>
+          <script>
+            document.write(task5(8128) ? "є досконалим" : "не є досконалим");
+          </script>
+        </span>
+      </h5>
+      <h5>
+        Наприклад: 500
+        <span>
+          <script>
+            document.write(task5(500) ? "є досконалим" : "не є досконалим");
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка приймає мінімальне та максимальне значення для
+        діапазону та виводіть тільки досконалі числа.
+      </h4>
+      <h5>
+        Наприклад: досконалими цифрами в діапазоні 0-1000 є
+        <span>
+          <script>
+            document.write(task6(1, 1000));
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка приймає час (години, хвилини, секунди) та виводить
+        їх на екран у форматі &lt&lthh:mm:ss&gt&gt. Якщо щось не було передано
+        виводити їх як 00.
+      </h4>
+      <label>Введіть числа: <input type="text" id="task7_hh" /></label>
+      <label>: <input type="text" id="task7_min" /></label>
+      <label>: <input type="text" id="task7_sec" /></label>
+      <h5>
+        Конвертований час:
+        <span id="task7_result">
+          <script>
+            document.getElementById("task7_hh").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task7_result").innerHTML = task7(
+                  this.value,
+                  document.getElementById("task7_min").value,
+                  document.getElementById("task7_sec").value
+                );
+              },
+              false
+            );
+            document.getElementById("task7_min").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task7_result").innerHTML = task7(
+                  document.getElementById("task7_hh").value,
+                  this.value,
+                  document.getElementById("task7_sec").value
+                );
+              },
+              false
+            );
+            document.getElementById("task7_sec").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task7_result").innerHTML = task7(
+                  document.getElementById("task7_hh").value,
+                  document.getElementById("task7_min").value,
+                  this.value
+                );
+              },
+              false
+            );
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка приймає кількість секунд, переводить в години та
+        хвилини та повертає в форматі &lt&lthh:mm:ss&gt&gt.
+      </h4>
+      <label>Введіть числа: <input type="text" id="task9_sec" /></label>
+      <h5>
+        Форматований час:
+        <span id="task9_result">
+          <script>
+            document.getElementById("task9_sec").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task9_result").innerHTML = task9(
+                  this.value
+                );
+              },
+              false
+            );
+          </script>
+        </span>
+      </h5>
+    </section>
+    <section>
+      <h4>
+        Написати функцію, яка підраховує різницю між двома датами.
+        Функціяприймає 6 параметрів, які описують 2 дати, та повертає у вигляді
+        строки. При виконанні завдання використайте функції з попередніх 2х
+        завдань, спочатку переведіть обидві дати в секунди, дізнайтеся різницю в
+        секундах, а потім різницю переведіть в формат.
+      </h4>
+      <h5>
+        Наприклад: 16:02:09 - 08:12:45 =
+        <span>
+          <script>
+            document.write(task10(16, 2, 9, 8, 12, 45));
+          </script>
+        </span>
+      </h5>
+    </section>
+  </body>
+</html>
