@@ -49,3 +49,7 @@ function task7(hh = '00', min = '00', sec = '00') {
     console.log(hh, min, sec);
     return `${hh}:${min}:${sec}`;
 }
+
+function task8(hh, min, sec) {
+    return Number(hh) * 60 * 60 + Number(min) * 60 + Number(sec);
+}
