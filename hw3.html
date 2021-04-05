@@ -129,5 +129,55 @@
         </span>
       </h5>
     </section>
+    <section>
+      <h4>
+        Написати функцію, яка приймає час (години, хвилини, секунди) та виводить
+        їх на екран у форматі &lt&lthh:mm:ss&gt&gt. Якщо щось не було передано
+        виводити їх як 00.
+      </h4>
+      <label>Введіть числа: <input type="text" id="task7_hh" /></label>
+      <label>: <input type="text" id="task7_min" /></label>
+      <label>: <input type="text" id="task7_sec" /></label>
+      <h5>
+        Конвертований час:
+        <span id="task7_result">
+          <script>
+            document.getElementById("task7_hh").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task7_result").innerHTML = task7(
+                  this.value,
+                  document.getElementById("task7_min").value,
+                  document.getElementById("task7_sec").value
+                );
+              },
+              false
+            );
+            document.getElementById("task7_min").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task7_result").innerHTML = task7(
+                  document.getElementById("task7_hh").value,
+                  this.value,
+                  document.getElementById("task7_sec").value
+                );
+              },
+              false
+            );
+            document.getElementById("task7_sec").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task7_result").innerHTML = task7(
+                  document.getElementById("task7_hh").value,
+                  document.getElementById("task7_min").value,
+                  this.value
+                );
+              },
+              false
+            );
+          </script>
+        </span>
+      </h5>
+    </section>
   </body>
 </html>

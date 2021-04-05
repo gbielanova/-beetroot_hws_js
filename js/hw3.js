@@ -41,3 +41,11 @@ function task6(num1, num2) {
 
     return result;
 }
+
+function task7(hh = '00', min = '00', sec = '00') {
+    (hh == '') ? hh = '00' : hh;
+    (min == '') ? min = '00' : min;
+    (sec == '') ? sec = '00' : sec;
+    console.log(hh, min, sec);
+    return `${hh}:${min}:${sec}`;
+}
