@@ -36,5 +36,26 @@
         якщо числа рівні
       </h5>
     </section>
+    <section>
+      <h4>Написати функцію, яка вираховує факторіал переданого числа</h4>
+      <label>Введіть число: <input type="text" id="task2_number" /></label>
+      <h5>
+        Факторіал введеного числа:
+        <span id="task2_result">
+          <script>
+            let number;
+            document.getElementById("task2_number").addEventListener(
+              "keyup",
+              function (evt) {
+                document.getElementById("task2_result").innerHTML = task2(
+                  this.value
+                );
+              },
+              false
+            );
+          </script>
+        </span>
+      </h5>
+    </section>
   </body>
 </html>
