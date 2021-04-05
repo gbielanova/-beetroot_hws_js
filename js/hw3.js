@@ -59,3 +59,9 @@ function task9(sec) {
     sec = sec % 60;
     return `${hh}:${min}:${sec}`;
 }
+
+function task10(hh1, min1, sec1, hh2, min2, sec2) {
+    date1 = task8(hh1, min1, sec1);
+    date2 = task8(hh2, min2, sec2);
+    return task9(date1 - date2);
+}
