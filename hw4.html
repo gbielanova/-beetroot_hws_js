@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/hw4.js"></script>
+    <title>JS HW 4</title>
+  </head>
+  <body>
+    <section>
+      <h4>
+        Створити об'єкт, що описує автомобіль (виробник, модель, рік випуску,
+        середня швидкість) та має такі функції для роботи з цим об'єктом:
+        функція для виводу на екран інформації про автомобіль; функція для
+        підрахунку необхідного часу для подолання відстані з середньою швидкістю
+        (врахуйте, що через кожні 4 години дороги водій має зробити перерву на 1
+        годину)
+      </h4>
+      <label>Вкажіть виробника <input type="text" id="producer" /></label>
+      <br />
+      <label>Вкажіть модель <input type="text" id="model" /></label> <br />
+      <label
+        >Вкажіть рік випуску <input type="text" id="production_year"
+      /></label>
+      <br />
+      <label
+        >Вкажіть середню швидкість <input type="text" id="avg_speed"
+      /></label>
+      <br />
+      <button onclick="makeCarWrapper()">
+        Натисність, щоб створити об'єкт автомобіль!
+      </button>
+      <p id="car"></p>
+      <label
+        >Вкажіть скільки кілометрів треба подолати <input type="text" id="dest"
+      /></label>
+      <button onclick="getEstimate()">
+        Натисність, щоб за скільки ви доїдете.
+      </button>
+      <p id="time"></p>
+    </section>
+  </body>
+</html>
