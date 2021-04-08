@@ -137,7 +137,7 @@ function calc() {
                 result = num1 * num2;
                 break;
             case ('/'):
-                result = num1 / num2;
+                (num2 == 0) ? result = 'не можно ділити на 0' : result = num1 / num2;
                 break;
             default:
                 result = 'Ця операція не підтримується'
