@@ -29,13 +29,27 @@ function makeCarWrapper() {
     let production_year = Number(document.getElementById("production_year").value);
     let avg_speed = Number(document.getElementById("avg_speed").value);
 
-    Car = makeCar(producer, model, production_year, avg_speed);
+    let errors = 0;
+    for (item of [producer, model, production_year, avg_speed]) {
+        if (item == '' || item == 0 || Number.isNaN(item)) {
+            errors++;
+        }
+    }
 
-    document.getElementById("car").innerHTML = Car.printCar();
+    if (errors > 0) { alert("Будь ласка заповніть всі поля"); }
+    else {
+        Car = makeCar(producer, model, production_year, avg_speed);
+
+        document.getElementById("car").innerHTML = Car.printCar();
+    }
 }
 
 function getEstimate() {
     let dest = Number(document.getElementById("dest").value);
+
+    if (dest == '' || dest == 0 || Number.isNaN(dest)) { alert("Будь ласка заповніть відстань"); }
+    if (Car == undefined) { alert("Будь ласка створіть спершу машину"); }
+
     document.getElementById("time").innerHTML = `Ви подолаєте цю відстань за ${Car.calcTime(dest)} годин`;
 }
 
@@ -103,6 +117,19 @@ function makeFraction(numerator, denominator) {
 }
 
 function testFunctions() {
+
+    let errors = 0;
+    for (item of [document.getElementById("fr1_num").value, document.getElementById("fr1_den").value,
+    document.getElementById("fr2_num").value, document.getElementById("fr2_den").value]) {
+        if (item == '' || Number.isNaN(Number(item)) || Number.isNaN(item) || Number(item) == 0) {
+            errors++;
+        }
+    }
+    if (errors > 0) {
+        alert("Будь ласка заповніть всі поля");
+        return;
+    }
+
     let fr1 = makeFraction(Number(document.getElementById("fr1_num").value),
         Number(document.getElementById("fr1_den").value));
     let fr2 = makeFraction(Number(document.getElementById("fr2_num").value),
