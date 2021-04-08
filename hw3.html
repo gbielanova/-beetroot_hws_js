@@ -46,9 +46,16 @@
             document.getElementById("task2_number").addEventListener(
               "keyup",
               function (evt) {
+                let value = checkInputNotString(this.value);
+                if (!isNaN(value) && value > 0) {
+                  console.log(value);
                 document.getElementById("task2_result").innerHTML = task2(
-                  this.value
+                    value
                 );
+                } else if (value <= 0) {
+                  document.getElementById("task2_result").innerHTML =
+                    "Ця функція працює тільки з числами > 0";
+                }
               },
               false
             );

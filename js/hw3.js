@@ -1,3 +1,20 @@
+function checkInputNotString(value) {
+    text = 'Ця функція працює тільки з числами, будь ласка введіть число.'
+    if (isNaN(Number(value))) {
+        confirm(text);
+        return NaN;
+    } else {
+        return Number(value);
+    }
+}
+
+// Next functions are designed to do a single operation and do not validate incoming data
+// so validation should be done on level of scripts that call this functions
+// due to requirements that some fields can be empty 
+// and execution that added to addEventListener it's impossible
+// to validate most of the cases. 
+// It's a bad design that was done not with validation in mind since it's a learning project
+
 function task1(num1, num2) {
     return num1 < num2 ? -1 : num1 > num2 ? 1 : 0;
 }
