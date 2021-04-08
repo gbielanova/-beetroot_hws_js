@@ -62,21 +62,23 @@ function getDivider() {
 function getDividers() {
     let num = checkInput(document.getElementById('task3_num').value);
 
-    if (num == -1) return;
+    if (num == -1) return
+    else if (num == 0) document.getElementById("task3_result").innerHTML = 'У 0 нема дільників'
+    else {
+        let result = '';
+        let i = num;
 
-    let result = '';
-    let i = num;
+        result += num;
 
-    result += num;
+        do {
+            i--;
+            if (num % i == 0) {
+                result += ', ' + i;
+            }
+        } while (i > 0)
 
-    do {
-        i--;
-        if (num % i == 0) {
-            result += ', ' + i;
-        }
-    } while (i > 0)
-
-    document.getElementById("task3_result").innerHTML = result;
+        document.getElementById("task3_result").innerHTML = result;
+    }
 }
 
 function getDigits() {
