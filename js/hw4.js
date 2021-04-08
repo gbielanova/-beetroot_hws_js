@@ -45,7 +45,14 @@ function makeFraction(numerator, denominator) {
         denominator: denominator,
 
         printFraction() {
-            return `${this.numerator}/${this.denominator}`
+            let res = `${this.numerator}/${this.denominator}`;
+            if (this.numerator == 0) {
+                res = 0;
+            } else if (this.numerator > this.denominator) {
+                res = `${Math.floor(this.numerator / this.denominator)} 
+                        ${this.numerator % this.denominator}/${this.denominator}`;
+            }
+            return res;
         },
 
         clear() {
@@ -71,7 +78,25 @@ function makeFraction(numerator, denominator) {
             return makeFraction(new_fr1_num + new_fr2_num, new_den);
         },
 
+        diff(fraction2) {
+            new_den = this.denominator * fraction2.denominator;
 
+            new_fr1_num = this.numerator * fraction2.denominator;
+
+            new_fr2_num = this.denominator * fraction2.numerator;
+
+            return makeFraction(new_fr1_num - new_fr2_num, new_den);
+        },
+
+        mult(fraction2) {
+            return makeFraction(this.numerator * fraction2.numerator,
+                this.denominator * fraction2.denominator);
+        },
+
+        div(fraction2) {
+            return makeFraction(this.numerator * fraction2.denominator,
+                this.denominator * fraction2.numerator);
+        },
     }
 
     return fraction;
@@ -84,11 +109,30 @@ function testFunctions() {
         Number(document.getElementById("fr2_den").value));
 
     summ_fr = fr1.summ(fr2);
-
     let summ_fr_cleared = Object.assign({}, summ_fr);
     summ_fr_cleared.clear();
-
     document.getElementById("fr_sum").innerHTML = `${fr1.printFraction()} + 
                                         ${fr2.printFraction()}=${summ_fr.printFraction()}=
                                         ${summ_fr_cleared.printFraction()}`;
+
+    diff_fr = fr1.diff(fr2);
+    let diff_fr_cleared = Object.assign({}, diff_fr);
+    diff_fr_cleared.clear();
+    document.getElementById("fr_diff").innerHTML = `${fr1.printFraction()} - 
+                                        ${fr2.printFraction()}=${diff_fr.printFraction()}=
+                                        ${diff_fr_cleared.printFraction()}`;
+
+    mult_fr = fr1.mult(fr2);
+    let mult_fr_cleared = Object.assign({}, mult_fr);
+    mult_fr_cleared.clear();
+    document.getElementById("fr_mult").innerHTML = `${fr1.printFraction()} * 
+                                ${fr2.printFraction()}=${mult_fr.printFraction()}=
+                                ${mult_fr_cleared.printFraction()}`;
+
+    div_fr = fr1.div(fr2);
+    let div_fr_cleared = Object.assign({}, div_fr);
+    div_fr_cleared.clear();
+    document.getElementById("fr_div").innerHTML = `${fr1.printFraction()} / 
+                                ${fr2.printFraction()}=${div_fr.printFraction()}=
+                                 ${div_fr_cleared.printFraction()}`;
 }
