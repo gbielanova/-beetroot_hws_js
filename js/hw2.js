@@ -1,6 +1,28 @@
+function checkInput(value) {
+    text = 'Ця функція працює тільки з цілими позітивними числами, будь ласка введіть таке число.'
+    if (isNaN(Number(value)) || Number(value) < 0 || Number(value % 1 != 0)) {
+        confirm(text);
+        return -1;
+    } else {
+        return Number(value);
+    }
+}
+
+function checkInputNotString(value) {
+    text = 'Ця функція працює тільки з числами, будь ласка введіть число.'
+    if (isNaN(value)) {
+        confirm(text);
+        return -1;
+    } else {
+        return Number(value);
+    }
+}
+
 function getSum() {
-    let from = Number(document.getElementById('task1_from').value);
-    let to = Number(document.getElementById('task1_to').value);
+    let from = checkInput(document.getElementById('task1_from').value);
+    let to = checkInput(document.getElementById('task1_to').value);
+
+    if (from == -1 || to == -1) return;
 
     let result = 0;
 
@@ -19,8 +41,10 @@ function getSum() {
 }
 
 function getDivider() {
-    let num1 = Number(document.getElementById('task2_num1').value);
-    let num2 = Number(document.getElementById('task2_num2').value);
+    let num1 = checkInput(document.getElementById('task2_num1').value);
+    let num2 = checkInput(document.getElementById('task2_num2').value);
+
+    if (num1 == -1 || num2 == -1) return;
 
     let result = 0;
 
@@ -36,7 +60,9 @@ function getDivider() {
 }
 
 function getDividers() {
-    let num = Number(document.getElementById('task3_num').value);
+    let num = checkInput(document.getElementById('task3_num').value);
+
+    if (num == -1) return;
 
     let result = '';
     let i = num;
@@ -54,7 +80,10 @@ function getDividers() {
 }
 
 function getDigits() {
-    let num = Number(document.getElementById('task4_num').value);
+    let num = checkInput(document.getElementById('task4_num').value);
+
+    if (num == -1) return;
+
     let result = 1;
 
     while (num / 10 >= 1) {
@@ -73,7 +102,10 @@ function getStats() {
     let even = 0;
 
     for (let i = 0; i < 10; i++) {
-        num = Number(prompt('Введіть число'));
+        let num = checkInputNotString(prompt('Введіть число'));
+
+        if (num == -1) return;
+
         (num > 0) ? pos++ : (num < 0) ? neg++ : zeros++;
         (num % 2 == 0) ? even++ : odd++;
     }
@@ -86,8 +118,11 @@ function calc() {
     let result;
 
     do {
-        let num1 = Number(prompt('Введіть перше число'));
-        let num2 = Number(prompt('Введіть друге число'));
+        let num1 = checkInputNotString(prompt('Введіть перше число'));
+        let num2 = checkInputNotString(prompt('Введіть друге число'));
+
+        if (num1 == -1 || num2 == -1) return;
+
         let sign = prompt('Введіть операцію (+, -, /, *)');
         switch (sign) {
             case ('+'):
@@ -111,10 +146,12 @@ function calc() {
 }
 
 function getShiftedNumber() {
-    let number = Number(document.getElementById('task7_number').value);
-    let shift = Number(document.getElementById('task7_shift').value);
+    let number = checkInput(document.getElementById('task7_number').value);
+    let shift = checkInput(document.getElementById('task7_shift').value);
 
-    // in case shift bigger then actual length of the number
+    if (number == -1 || shift == -1) return;
+
+    // in case shift bigger than actual length of the number
     shift = shift % String(number).length;
 
     let result = (number % 10 ** (String(number).length - shift)) * 10 ** shift + Math.floor(number / 10 ** (String(number).length - shift));
