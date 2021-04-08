@@ -1,3 +1,4 @@
+// task1
 let Car;
 
 function makeCar(producer, model, production_year, avg_speed) {
@@ -53,6 +54,7 @@ function getEstimate() {
     document.getElementById("time").innerHTML = `Ви подолаєте цю відстань за ${Car.calcTime(dest)} годин`;
 }
 
+// task2
 function makeFraction(numerator, denominator) {
     let fraction = {
         numerator: numerator,
@@ -162,4 +164,37 @@ function testFunctions() {
     document.getElementById("fr_div").innerHTML = `${fr1.printFraction()} / 
                                 ${fr2.printFraction()}=${div_fr.printFraction()}=
                                  ${div_fr_cleared.printFraction()}`;
+}
+
+// task3 
+let Time;
+
+function makeTime(hh, min, sec) {
+    let time = {
+        hh: hh,
+        min: min,
+        sec: sec,
+
+        printTime() {
+            let hh = String(this.hh).length == 1 ? '0' + this.hh : this.hh;
+            let min = String(this.min).length == 1 ? '0' + this.min : this.min;
+            let sec = String(this.sec).length == 1 ? '0' + this.sec : this.sec;
+            return `${hh}:${min}:${sec}`;
+        },
+    }
+
+    return time;
+}
+
+function makeTimeWrapper() {
+    let hh = Number(document.getElementById("hh").value);
+    let min = Number(document.getElementById("min").value);
+    let sec = Number(document.getElementById("sec").value);
+
+    if (hh < 0 || hh > 24 || min < 0 || min > 60 || sec < 0 || sec > 0 ||
+        Number.isNaN(hh) || Number.isNaN(min) || Number.isNaN(sec)) { alert("Будь ласка заповніть всі поля валідними даними"); return; }
+
+    Time = makeTime(hh, min, sec);
+
+    document.getElementById("time_task3").innerHTML = Time.printTime();
 }
