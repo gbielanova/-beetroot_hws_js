@@ -167,39 +167,36 @@ function testFunctions() {
 }
 
 // task3 
-let Time;
+let Time = {
+    hh: 0,
+    min: 0,
+    sec: 0,
 
-function makeTime(hh, min, sec) {
-    let time = {
-        hh: hh,
-        min: min,
-        sec: sec,
+    printTime() {
+        let hh = String(this.hh).length == 1 ? '0' + this.hh : this.hh;
+        let min = String(this.min).length == 1 ? '0' + this.min : this.min;
+        let sec = String(this.sec).length == 1 ? '0' + this.sec : this.sec;
+        return `${hh}:${min}:${sec}`;
+    },
 
-        printTime() {
-            let hh = String(this.hh).length == 1 ? '0' + this.hh : this.hh;
-            let min = String(this.min).length == 1 ? '0' + this.min : this.min;
-            let sec = String(this.sec).length == 1 ? '0' + this.sec : this.sec;
-            return `${hh}:${min}:${sec}`;
-        },
-
-        changeTime(objArgs) {
-            let original_time = new Date(this.hh * 3600 + this.min * 60 + this.sec);
-            (objArgs.hh != undefined) ? original_time.setUTCHours(original_time.getUTCHours() + objArgs.hh) :
-                original_time.setUTCHours(original_time.getUTCHours() + 0);
-            (objArgs.min != undefined) ? original_time.setUTCMinutes(original_time.getUTCMinutes() + objArgs.min) :
-                original_time.setUTCMinutes(original_time.getUTCMinutes() + 0);
-            (objArgs.sec != undefined) ? original_time.setUTCSeconds(original_time.getUTCSeconds() + objArgs.sec) :
-                original_time.setUTCSeconds(original_time.getUTCSeconds() + 0);
-            this.hh = original_time.getUTCHours();
-            this.min = original_time.getUTCMinutes();
-            this.sec = original_time.getUTCSeconds();
-        }
+    changeTime(objArgs) {
+        let original_time = new Date(1970, 0, 1);
+        original_time.setSeconds(this.sec);
+        original_time.setMinutes(this.min);
+        original_time.setHours(this.hh);
+        (objArgs.hh != undefined) ? original_time.setHours(original_time.getHours() + objArgs.hh) :
+            original_time.setHours(original_time.getHours() + 0);
+        (objArgs.min != undefined) ? original_time.setMinutes(original_time.getMinutes() + objArgs.min) :
+            original_time.setMinutes(original_time.getMinutes() + 0);
+        (objArgs.sec != undefined) ? original_time.setSeconds(original_time.getSeconds() + objArgs.sec) :
+            original_time.setSeconds(original_time.getSeconds() + 0);
+        this.hh = original_time.getHours();
+        this.min = original_time.getMinutes();
+        this.sec = original_time.getSeconds();
     }
-
-    return time;
 }
 
-function makeTimeWrapper() {
+function showTimeWrapper() {
     let hh = Number(document.getElementById("hh").value);
     let min = Number(document.getElementById("min").value);
     let sec = Number(document.getElementById("sec").value);
@@ -207,9 +204,11 @@ function makeTimeWrapper() {
     if (hh < 0 || hh > 24 || min < 0 || min > 60 || sec < 0 || sec > 60 ||
         Number.isNaN(hh) || Number.isNaN(min) || Number.isNaN(sec)) { alert("Будь ласка заповніть всі поля валідними даними"); return; }
 
-    Time = makeTime(hh, min, sec);
-    document.getElementById("time_task3").innerHTML = Time.printTime();
+    Time.hh = hh;
+    Time.min = min;
+    Time.sec = sec;
 
+    document.getElementById("time_task3").innerHTML = Time.printTime();
 
     console.log(Time);
 
