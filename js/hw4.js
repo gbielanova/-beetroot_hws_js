@@ -181,6 +181,19 @@ function makeTime(hh, min, sec) {
             let sec = String(this.sec).length == 1 ? '0' + this.sec : this.sec;
             return `${hh}:${min}:${sec}`;
         },
+
+        changeTime(objArgs) {
+            let original_time = new Date(this.hh * 3600 + this.min * 60 + this.sec);
+            (objArgs.hh != undefined) ? original_time.setUTCHours(original_time.getUTCHours() + objArgs.hh) :
+                original_time.setUTCHours(original_time.getUTCHours() + 0);
+            (objArgs.min != undefined) ? original_time.setUTCMinutes(original_time.getUTCMinutes() + objArgs.min) :
+                original_time.setUTCMinutes(original_time.getUTCMinutes() + 0);
+            (objArgs.sec != undefined) ? original_time.setUTCSeconds(original_time.getUTCSeconds() + objArgs.sec) :
+                original_time.setUTCSeconds(original_time.getUTCSeconds() + 0);
+            this.hh = original_time.getUTCHours();
+            this.min = original_time.getUTCMinutes();
+            this.sec = original_time.getUTCSeconds();
+        }
     }
 
     return time;
@@ -191,10 +204,24 @@ function makeTimeWrapper() {
     let min = Number(document.getElementById("min").value);
     let sec = Number(document.getElementById("sec").value);
 
-    if (hh < 0 || hh > 24 || min < 0 || min > 60 || sec < 0 || sec > 0 ||
+    if (hh < 0 || hh > 24 || min < 0 || min > 60 || sec < 0 || sec > 60 ||
         Number.isNaN(hh) || Number.isNaN(min) || Number.isNaN(sec)) { alert("Будь ласка заповніть всі поля валідними даними"); return; }
 
     Time = makeTime(hh, min, sec);
-
     document.getElementById("time_task3").innerHTML = Time.printTime();
+
+
+    console.log(Time);
+
+    Time.changeTime({ sec: 10 });
+    console.log(Time);
+    document.getElementById("time_sec").innerHTML = Time.printTime();
+
+    Time.changeTime({ min: 20 }); console.log(Time);
+
+    document.getElementById("time_min").innerHTML = Time.printTime();
+
+    Time.changeTime({ hh: 30 }); console.log(Time);
+
+    document.getElementById("time_hh").innerHTML = Time.printTime();
 }
