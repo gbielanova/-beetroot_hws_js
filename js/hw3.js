@@ -74,7 +74,13 @@ function task9(sec) {
     hh = Math.floor(sec / 3600);
     min = Math.floor(sec % 3600 / 60);
     sec = sec % 60;
-    return `${hh}:${min}:${sec}`;
+    let hh_str;
+    let min_str;
+    let sec_str;
+    (String(hh).length == 1) ? hh_str = `0${hh}` : hh_str = String(hh);
+    (String(min).length == 1) ? min_str = `0${min}` : min_str = String(min);
+    (String(sec).length == 1) ? sec_str = `0${sec}` : sec_str = String(sec);
+    return `${hh_str}:${min_str}:${sec_str}`;
 }
 
 function task10(hh1, min1, sec1, hh2, min2, sec2) {
