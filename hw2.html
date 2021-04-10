@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/hw2.js"></script>
+    <title>JS HW 2</title>
+  </head>
+  <body>
+    <section>
+      <h4>Порахувати сумму всіх цифр в заданому користувачем діапазоні.</h4>
+      <label>Введіть діапазон: від <input type="text" id="task1_from" /></label>
+      <label>до <input type="text" id="task1_to" /></label>
+      <button onclick="getSum()">Отримати сумму</button>
+      <p id="task1_result"></p>
+    </section>
+    <section>
+      <h4>Запитати 2 числа та знайти тільки найбільший загальний дільник</h4>
+      <label>Введіть числа: <input type="text" id="task2_num1" /></label>
+      <input type="text" id="task2_num2" />
+      <button onclick="getDivider()">Отримати загальний дільник</button>
+      <p id="task2_result"></p>
+    </section>
+    <section>
+      <h4>Запитати число та вивести всі дільники.</h4>
+      <label>Введіть число: <input type="text" id="task3_num" /></label>
+      <button onclick="getDividers()">Отримати дільники</button>
+      <p id="task3_result"></p>
+    </section>
+    <section>
+      <h4>Визначити кількість цифр у введеному числі</h4>
+      <label>Введіть число: <input type="text" id="task4_num" /></label>
+      <button onclick="getDigits()">Отримати кількість цифр</button>
+      <p id="task4_result"></p>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача 10 чисел та підрахувати скільки він ввів
+        позитивних, негативних та нулів. До цього підрахувати скільки парних та
+        не парних. Вивести на екран. Використавши одну перемінну.
+      </h4>
+      <button onclick="getStats()">Ввести цифри та отримати результат</button>
+      <p id="task5_result"></p>
+    </section>
+    <section>
+      <h4>
+        Зациклити калькулятор. Запитати у користувача два числа та знак, вивести
+        результат та запитати чи хоче користувач ще щось вирішити.
+      </h4>
+      <button onclick="calc()">Запустити калькулятор</button>
+    </section>
+    <section>
+      <h4>
+        Запитати у користувача число та на скільки цифр його посунути. Вивести
+        результат. (якщо 123456 посунути на 2 цифри, то вийде 345612)
+      </h4>
+      <label>Введіть число: <input type="text" id="task7_number" /></label>
+      <label>зсув на <input type="text" id="task7_shift" /></label>
+      <button onclick="getShiftedNumber()">Отримати число</button>
+      <p id="task7_result"></p>
+    </section>
+    <section>
+      <h4>
+        Зациклити вивод днів тижня таким чином: "День тижня. Хочете побачити
+        наступний день?" І так допоки користувач обирає ОК.
+      </h4>
+      <button onclick="days()">Запустити дні</button>
+    </section>
+    <section>
+      <h4>
+        Вивести таблицю множення для всіх чисел від 2 до 9. Кожне число треба
+        помножити на числа від 1 до 10.
+      </h4>
+      <button onclick="multTable()">Побачити таблицю множення</button>
+      <p id="task8_result1"></p>
+      <p id="task8_result2"></p>
+      <p id="task8_result3"></p>
+      <p id="task8_result4"></p>
+      <p id="task8_result5"></p>
+      <p id="task8_result6"></p>
+      <p id="task8_result7"></p>
+      <p id="task8_result8"></p>
+      <p id="task8_result9"></p>
+    </section>
+    <section>
+      <h4>
+        Гра "Вгадай число". Запропонувати користувачу загадати число від 0 до
+        100 та відгадати його наступним чином: кожну ітерацію циклу ділити
+        діапазон чисел навпіл, записуєте результат в N та запитуєте у
+        користувача "Ваше число &gtN, &ltN, ==N?". В залежності від того, що
+        обрав користувач, зменшуєте діапазон. Початковий діапазон від 0 до 100,
+        поділили навпіл та отримали 50. Якщо користувач сказав, що його число
+        &gt50, то треба змінити діапазон на від 51 до 100. І так допоки
+        користувач не обере == N.
+      </h4>
+      <button onclick="guessNumber()">Почати гру</button>
+      <p id="task10_result"></p>
+    </section>
+  </body>
+</html>
