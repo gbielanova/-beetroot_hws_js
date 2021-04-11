@@ -4,6 +4,10 @@ let shoppingList = []
 
 function printShoppingList() {
     let print_str = 'назва   ||  кількість   ||  куплен';
+
+    console.log(shoppingList);
+    console.log(shoppingList.sort((a, b) => (a.bought === b.bought) ? 0 : a.bought ? -1 : 1))
+
     shoppingList.forEach(function (item) {
         print_str += `<br />${item.name}  ||  ${item.qwt}  ||  ${item.bought}`;
 
