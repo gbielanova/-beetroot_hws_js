@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>JS HW 5</title>
+  </head>
+  <body>
+    <section>
+      <h4>
+        Створити масив "Список покупок". Кожний елемент масива є об'єктом, що
+        має в собі назву продукта, необхідну кількість та куплен він чи ні.
+        Написати декілька функцій для роботи з таким масивом.
+      </h4>
+      <ul>
+        <li>
+          Вивод усього списка на екран таким чином, щоб спочатку йшли некуплені
+          продукти, а потім куплені.
+        </li>
+        <li>
+          Додавання продукта до списка. Якщо такий продукт вже є в списку, то
+          треба збільшити кількість, а не додавати новий продукт.
+        </li>
+        <li>
+          Покупка продукта. Функція приймає назву продукта та помічає його як
+          куплений.
+        </li>
+      </ul>
+
+      <p>Список продуктів:</p>
+      <div id="print_list"></div>
+
+      <label>Назва продукта: <input type="text" id="product_name" /></label>
+      <br />
+      <label>Кількість: <input type="text" id="product_qwt" /></label>
+      <br />
+
+      <button onclick="addToShoppingList()">Додати продукт</button>
+      <br />
+      <label>Купити продукт: <input type="text" id="product_buy" /></label>
+      <button onclick="buyProduct()">Купити продукт</button>
+    </section>
+    <script src="js/hw5.js"></script>
+  </body>
+</html>
