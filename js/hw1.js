@@ -2,148 +2,148 @@ function checkStatus() {
     let age = Number(document.getElementById("age").value);
     let status;
 
-    switch(true) {
+    switch (true) {
         case (age <= 2):
-            status = "Ви є дитина"; 
+            status = "Ви є дитина";
             break;
         case (12 <= age && age < 18):
-            status = "Ви є підліток"; 
+            status = "Ви є підліток";
             break;
         case (18 <= age && age < 60):
-            status = "Ви є дорослий"; 
+            status = "Ви є дорослий";
             break;
         case (age >= 60):
-            status = "Ви є пенсіонер"; 
+            status = "Ви є пенсіонер";
             break;
         default:
-            status = "Ви є неведома звірюшка (за умовами завдання)"; 
-            break;      
-        }
+            status = "Ви є неведома звірюшка (за умовами завдання)";
+            break;
+    }
 
-    document.getElementById("status").innerHTML = status;  
+    document.getElementById("status").innerHTML = status;
 }
 
 function getSymbol() {
     let number = Number(document.getElementById("number").value);
     let symbol;
 
-    switch(number) {
+    switch (number) {
         case 0:
-            symbol = ")"; 
+            symbol = ")";
             break;
         case 1:
-            symbol = "!"; 
+            symbol = "!";
             break;
         case 2:
-            symbol = "@"; 
+            symbol = "@";
             break;
         case 3:
-            symbol = "#"; 
+            symbol = "#";
             break;
         case 4:
-            symbol = "$"; 
+            symbol = "$";
             break;
         case 5:
-            symbol = "%"; 
-            break;        
+            symbol = "%";
+            break;
         case 6:
-            symbol = "^"; 
-            break;        
+            symbol = "^";
+            break;
         case 7:
-            symbol = "&"; 
+            symbol = "&";
             break;
         case 8:
-            symbol = "*"; 
-            break;        
+            symbol = "*";
+            break;
         case 9:
-            symbol = "("; 
+            symbol = "(";
             break;
         // No need to default since we are using select as input but nice to have a fallback 
         // in case function will be used with other element    
         default:
-            symbol = "Введіть цифру від 0 до 9"; 
-            break;      
-        }
+            symbol = "Введіть цифру від 0 до 9";
+            break;
+    }
 
-    document.getElementById("symbol").innerHTML = symbol;  
+    document.getElementById("symbol").innerHTML = symbol;
 }
 
-function checkNumber(){
+function checkNumber() {
     let number = Number(document.getElementById("number_3x").value);
     let result;
 
-    if (Number.isNaN(number)){
+    if (Number.isNaN(number)) {
         result = 'Будь ласка введіть число'
-    }     
+    }
     // Double conversion to make sure wthat e have a number with 3 digits in
     else if (String(number).length != 3) {
         result = 'Будь ласка введіть число з 3х цифр'
     }
-    else{
+    else {
         digit1 = number % 10;
         digit2 = Math.floor(number / 10) % 10;
         digit3 = Math.floor(number / 100);
-    
-        if (digit1 == digit2 || digit1 == digit3){
+
+        if (digit1 == digit2 || digit1 == digit3) {
             result = `Цифра ${digit1} повторюється`
-        } else if (digit2 == digit3){
+        } else if (digit2 == digit3) {
             result = `Цифра ${digit2} повторюється`
         }
-        else{
+        else {
             result = 'Цифрі в числі унікальні'
         }
     }
 
-    document.getElementById("number_3x_result").innerHTML = result;  
+    document.getElementById("number_3x_result").innerHTML = result;
 }
 
-function checkYear(){
+function checkYear() {
     let year = Number(document.getElementById("year").value);
     let result;
 
-    if (year % 4 != 0){
+    if (year % 4 != 0) {
         result = 'Цей рік є звичайним';
-    } else if  (year % 100 != 0){
+    } else if (year % 100 != 0) {
         result = 'Цей рік є високосним';
-    } else if (year % 400 != 0){        
+    } else if (year % 400 != 0) {
         result = 'Цей рік є високосним';
     } else {
-        result = 'Цей рік є високосним'; 
+        result = 'Цей рік є високосним';
     }
 
-    document.getElementById("year_result").innerHTML = result;  
+    document.getElementById("year_result").innerHTML = result;
 }
 
-function checkPalindrom(){
+function checkPalindrom() {
     let number = Number(document.getElementById("palindrom").value);
     let result;
 
-    if (Number.isNaN(number)){
+    if (Number.isNaN(number)) {
         result = 'Будь ласка введіть число'
-    }     
+    }
     // Double conversion to make sure wthat e have a number with 3 digits in
     else if (String(number).length != 5) {
         result = 'Будь ласка введіть число з 5х цифр'
     }
-    else{
+    else {
         digit1 = String(number)[0];
         digit2 = String(number)[1];
         digit3 = String(number)[2];
         digit4 = String(number)[3];
         digit5 = String(number)[4];
-    
-        if (digit1 == digit5 && digit2 == digit4){
+
+        if (digit1 == digit5 && digit2 == digit4) {
             result = 'Це число є паліндромом'
         }
-        else{
+        else {
             result = 'Це число не є паліндромом'
         }
     }
 
-    document.getElementById("palindrom_result").innerHTML = result;  
+    document.getElementById("palindrom_result").innerHTML = result;
 }
 
-function exchange(){
+function exchange() {
     let number = Number(document.getElementById("usd").value);
     let currency = document.getElementById("currency").value
     // exchange rate to 02/02/2021
@@ -153,74 +153,74 @@ function exchange(){
 
     let result;
 
-    switch (currency){
-        case 'EUR': 
+    switch (currency) {
+        case 'EUR':
             result = number * RATE_EUR;
             break;
-        case 'UAH': 
+        case 'UAH':
             result = number * RATE_UAH;
             break;
-        case 'AZN': 
+        case 'AZN':
             result = number * RATE_AZN;
             break;
     }
 
-    document.getElementById("exchange_result").innerHTML = `Конвертована сумма складає ${result} ${currency}`;  
+    document.getElementById("exchange_result").innerHTML = `Конвертована сумма складає ${result} ${currency}`;
 }
 
-function calcDiscount(){
+function calcDiscount() {
     let amount = Number(document.getElementById("amount").value);
     let discount = 1;
 
-    switch(true) {
+    switch (true) {
         case (amount >= 200 && amount < 300):
-            discount = 0.97; 
+            discount = 0.97;
             break;
         case (amount >= 300 && amount < 500):
-            discount = 0.95; 
-            break;   
+            discount = 0.95;
+            break;
         case (amount >= 500):
-            discount = 0.93; 
-            break;   
-        }
+            discount = 0.93;
+            break;
+    }
 
-    document.getElementById("amount_result").innerHTML = `До сплати ${(amount * discount).toFixed(2)}`;  
+    document.getElementById("amount_result").innerHTML = `До сплати ${(amount * discount).toFixed(2)}`;
 }
 
-function isCircleIn(){
+function isCircleIn() {
     const PI = 3.1415;
     let diameter = Number(document.getElementById("c").value) / PI;
     let side = Number(document.getElementById("p").value) / 4;
 
-    if (side >= diameter){
-        document.getElementById("check_result").innerHTML = 'Така окружність може бути в квадраті';  
-    } else{
-        document.getElementById("check_result").innerHTML = 'Така окружність не може бути в квадраті';  
+    if (side >= diameter) {
+        document.getElementById("check_result").innerHTML = 'Така окружність може бути в квадраті';
+    } else {
+        document.getElementById("check_result").innerHTML = 'Така окружність не може бути в квадраті';
     }
 }
 
-function quizz(){
+function quizz() {
     let q1 = document.getElementById("question1").value;
     let q2 = document.getElementById("question2").value;
     let q3 = document.getElementById("question3").value;
     let result = 0;
 
-    if (q1 == '0'){
+    if (q1 == '0') {
         result += 2;
     }
-    if (q2 == '1'){
+    if (q2 == '1') {
         result += 2;
     }
-    if (q3 == '1'){
+    if (q3 == '1') {
         result += 2;
     }
 
-    document.getElementById("quizz_results").innerHTML = `Ваш результат ${result}`;  
+    document.getElementById("quizz_results").innerHTML = `Ваш результат ${result}`;
 }
 
-function getNextDay(){
+function getNextDay() {
     let day = new Date(document.getElementById("date").value);
     let nextDay = new Date(day);
     nextDay.setDate(day.getDate() + 1);
-    document.getElementById("next_day").innerHTML = `Наступним буде ${nextDay}`;  
+    document.getElementById("next_day").innerHTML = `Наступним буде ${nextDay}`;
 }
