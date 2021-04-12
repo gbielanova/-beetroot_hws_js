@@ -5,6 +5,8 @@ let shoppingList = []
 function printShoppingList() {
     let print_str = 'назва   ||  кількість   ||  куплен';
 
+    shoppingList.sort((a, b) => (a.bought === b.bought) ? 0 : a.bought ? -1 : 1);
+
     shoppingList.forEach(function (item) {
         print_str += `<br />${item.name}  ||  ${item.qwt}  ||  ${item.bought}`;
 
@@ -171,3 +173,94 @@ function writeCssText(styles) {
     document.write(`<p ${stylestToWrite}>${text}</p>`);
 }
 
+//task4
+let audiences = [
+    { name: "KYIV", places: 20, faculty: 'IT' },
+    { name: "DNIPRO", places: 19, faculty: 'IT' },
+    { name: "KHARKIV", places: 15, faculty: 'IT' },
+    { name: "LVIV", places: 12, faculty: 'IT' },
+    { name: "POLTAVA", places: 15, faculty: 'ART' },
+    { name: "ODESA", places: 18, faculty: 'ART' },
+    { name: "LUTSK", places: 10, faculty: 'ART' },
+    { name: "CHERNIVTSI", places: 10, faculty: 'ART' },
+    { name: "DONETSK", places: 10, faculty: 'COOK' },
+    { name: "MYKOLAIV", places: 14, faculty: 'COOK' },
+    { name: "SEVASTOPOL", places: 20, faculty: 'COOK' },
+    { name: "KHERSON", places: 10, faculty: 'COOK' }
+]
+
+function printAudience(auds, elementToPrint) {
+    let print_str = 'назва   -  кількість місць   -  факультет';
+
+    auds.forEach(function (item) {
+        print_str += `<br />${item.name}  -  ${item.places}  -  ${item.faculty}`;
+    });
+    document.getElementById(elementToPrint).innerHTML = print_str;
+}
+
+function audiencesPerFaculty(auds) {
+    let fac = document.getElementById("get_fac_audiences").value.trim();
+    facs = [];
+
+    auds.forEach(element => {
+        facs.push(element.faculty);
+    });
+
+    if (fac == '') {
+        alert('Введіть валідну назву');
+        return
+    } else if (facs.indexOf(fac) == -1) {
+        alert('Такого факультета нема в списку');
+        return
+    }
+
+    let print_str = 'назва   -  кількість місць   -  факультет';
+
+    auds.forEach(function (item) {
+        if (item.faculty == fac) {
+            print_str += `<br />${item.name}  -  ${item.places}  -  ${item.faculty}`;
+        }
+    });
+
+    document.getElementById("print_fac_audiences").innerHTML = print_str;
+}
+
+function printValidAudiences(auds, group) {
+    validAuds = [];
+
+    auds.forEach(element => {
+        if (element.faculty == group.faculty && group.people <= element.places) {
+            validAuds.push(element);
+        }
+    });
+
+    let print_str = 'назва   -  кількість місць   -  факультет';
+
+    validAuds.forEach(function (item) {
+        print_str += `<br />${item.name}  -  ${item.places}  -  ${item.faculty}`;
+    });
+
+    document.getElementById("print_valid_audiences").innerHTML = print_str;
+}
+
+function sortPlaces(auds) {
+    auds.sort((a, b) => (a.places > b.places) ? -1 : 1);
+    printAudience(auds, "print_sort_places");
+}
+
+function sortNames(auds) {
+    auds.sort((a, b) => (a.name < b.name) ? -1 : 1);
+    printAudience(auds, "print_sort_names");
+}
+
+printAudience(audiences, "print_audience");
+
+let group = {
+    name: 'IS-21',
+    people: 13,
+    faculty: 'IT'
+}
+
+document.getElementById("group").innerHTML = `${group.name}   ${group.people}   ${group.faculty}`;
+
+printValidAudiences(audiences, group);

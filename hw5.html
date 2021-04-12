@@ -78,6 +78,40 @@
       </button>
     </section>
 
+    <section>
+      <h4>
+        Створити масив аудіторій академії. Об'єкт аудіторія складається з назви,
+        кількості посадкових місць (від 10 до 20) та назви факультета, для якого
+        вона належить. Написати декілька функцій для роботи з ним:
+      </h4>
+      <ul>
+        <li>Вивод на екран всіх аудіторійю</li>
+        <li>Вивод на екран аудіторій для вказаного факультета.</li>
+        <li>
+          Вивод на екран тільки ті аудіторії, що підходять для заданої групи.
+          Об'єкт-група складається з назви, кількості студентів та назви
+          факультета.
+        </li>
+        <li>Функція сортування аудіторій по кількості місць.</li>
+        <li>Функція сортування аудіторій по назві.</li>
+      </ul>
+      <p>Список аудіторій:</p>
+      <div id="print_audience"></div>
+      <label>Факультету: <input type="text" id="get_fac_audiences" /></label>
+      <button onclick="audiencesPerFaculty(audiences)">
+        Вивести аудіторії
+      </button>
+      <div id="print_fac_audiences"></div>
+      <p>Группа: <span id="group"></span></p>
+      <div id="print_valid_audiences"></div>
+      <button onclick="sortPlaces(audiences)">
+        Сортувати за кількістю місць
+      </button>
+      <div id="print_sort_places"></div>
+      <button onclick="sortNames(audiences)">Сортувати за назвою</button>
+      <div id="print_sort_names"></div>
+    </section>
+
     <script src="js/hw5.js"></script>
   </body>
 </html>
