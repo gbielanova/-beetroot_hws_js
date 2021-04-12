@@ -5,9 +5,6 @@ let shoppingList = []
 function printShoppingList() {
     let print_str = 'назва   ||  кількість   ||  куплен';
 
-    console.log(shoppingList);
-    console.log(shoppingList.sort((a, b) => (a.bought === b.bought) ? 0 : a.bought ? -1 : 1))
-
     shoppingList.forEach(function (item) {
         print_str += `<br />${item.name}  ||  ${item.qwt}  ||  ${item.bought}`;
 
@@ -77,5 +74,68 @@ function buyProduct() {
     printShoppingList()
 }
 
-
 printShoppingList()
+
+//task2
+let receipt = [
+    { name: "буряк", qwt: 1, price: 15 },
+    { name: "капуста", qwt: 2, price: 20 },
+    { name: "картопля", qwt: 2, price: 10.65 },
+    { name: "томати", qwt: 1, price: 30 },
+    { name: "томатна паста", qwt: 1, price: 45 },
+    { name: "м'ясо", qwt: 1.5, price: 398 },
+    { name: "цибуля", qwt: 0.5, price: 12 },
+    { name: "морква", qwt: 0.5, price: 15 }
+]
+
+function printReceipt(rcpt) {
+    let print_str = 'назва   -  кількість   -  куплен';
+
+    rcpt.forEach(function (item) {
+        print_str += `<br />${item.name}  -  ${item.qwt}  -  ${item.price}`;
+    });
+    document.getElementById("print_receipt").innerHTML = print_str;
+}
+
+function receiptSum(rcpt) {
+    let sum = 0;
+
+    rcpt.forEach(element => {
+        sum += element.qwt * element.price;
+    });
+    document.getElementById("sum_receipt").innerHTML = sum;
+}
+
+// In next 2 functions requirements can be read as per item in the receipt i.e. qwt*price
+// and as per price to 1 item. 
+// I choosed to do qwt*price
+function maxPrice(rcpt) {
+    let idx = 0;
+    let sums = [];
+
+    rcpt.forEach(element => {
+        sums.push(element.qwt * element.price);
+    });
+
+    // here I could and should use sums array, but next approach seems better for learning
+    let max = Math.max.apply(Math, rcpt.map(function (item) { return item.price * item.qwt; }))
+    idx = sums.indexOf(max);
+
+    document.getElementById("max_receipt").innerHTML = `${rcpt[idx].name}, ${max}`;
+}
+
+function avgPrice(rcpt) {
+    let sums = 0;
+
+    rcpt.forEach(element => {
+        sums += element.qwt * element.price;
+    });
+
+    document.getElementById("avg_receipt").innerHTML = (sums / rcpt.length).toFixed(2);
+}
+
+
+printReceipt(receipt);
+receiptSum(receipt);
+maxPrice(receipt);
+avgPrice(receipt);
