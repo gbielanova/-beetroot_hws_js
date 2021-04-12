@@ -139,3 +139,35 @@ printReceipt(receipt);
 receiptSum(receipt);
 maxPrice(receipt);
 avgPrice(receipt);
+
+//task3
+let css_styles = [
+    { name: 'color', value: 'blue' },
+    { name: 'font-size', value: '300%' },
+    { name: 'text-align', value: 'right' },
+    { name: 'text-decoration', value: 'underline' },
+    { name: 'text-transform', value: 'capitalize' },
+    { name: 'letter-spacing', value: '10px' }
+]
+
+function writeCssText(styles) {
+    let text = document.getElementById("css_text").value;
+
+    if (text == '') {
+        alert('Введіть не пустий текст');
+        return
+    }
+
+    let stylestToWrite = 'style="';
+
+    styles.forEach(element => {
+        stylestToWrite += `${element.name}:${element.value};`
+    });
+
+    stylestToWrite += '"';
+
+    console.log(stylestToWrite);
+
+    document.write(`<p ${stylestToWrite}>${text}</p>`);
+}
+
