@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>JS HW 6</title>
+  </head>
+  <body>
+    <section>
+      <h4>
+        Реалізувати клас, що описує окружність. В класі мають бути такі
+        компоненти:
+      </h4>
+      <ul>
+        <li>поле, що зберагіє радіус</li>
+        <li>get-свойство, що повертає радіус</li>
+        <li>set-свойство, що задає радіус</li>
+        <li>get-свойство, що повертає діаметр</li>
+        <li>set-свойство, що задає діаметр</li>
+        <li>метод, що вираховує площу окружності</li>
+        <li>метод, що вираховує довжину окружності</li>
+      </ul>
+
+      <p>Початковий радуіс: <span id="initial_r"></span></p>
+
+      <label>Новий радіус <input type="text" id="new_radius" /></label>
+      <button onclick="setRadiusWrapper(circle)">Встановити радіус</button>
+
+      <br />
+      <label>Новий діаметр <input type="text" id="new_diameter" /></label>
+      <button onclick="setDiameterWrapper(circle)">Встановити діаметер</button>
+
+      <p>Поточний радуіс: <span id="get_r"></span></p>
+      <p>Поточний діаметр: <span id="get_d"></span></p>
+      <p>Поточна площа окружності: <span id="area"></span></p>
+      <p>Поточна довжина окружності: <span id="length"></span></p>
+    </section>
+
+    <script src="js/hw6.js"></script>
+  </body>
+</html>
