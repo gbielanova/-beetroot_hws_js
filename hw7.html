@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/hw7.css" />
     <script src="js/hw7.js"></script>
     <title>JS HW 7</title>
   </head>
@@ -15,5 +16,23 @@
     <script>
       printPlayList();
     </script>
+    <section>
+      <h4>
+        Створити сторінку з кнопкою "Відкрити" та модальним вікном. На
+        модальному вікні має бути текст та кнопка "Закрити". При загрузці
+        сторінки модальне вікно не відображається. При кліку на кнопку
+        "Відкрити" з'являється модальне вікно, при кліку на "Закрити" - зникає.
+      </h4>
+      <button onclick="showModalWindow()" id="openModal">Відкрити</button>
+      <div id="modal">
+        <div class="modal-content">
+          <p>Ну привіт, модільне вікно!</p>
+          <button id="closeModal">Закрити</button>
+        </div>
+      </div>
+      <script>
+        showModalWindow();
+      </script>
+    </section>
   </body>
 </html>
