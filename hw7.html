@@ -34,5 +34,21 @@
         showModalWindow();
       </script>
     </section>
+    <section>
+      <h4>
+        Створити сторінку зі світлофором та кнопкою, що переключає світлофор на
+        наступний колір.
+      </h4>
+      <div id="semafor">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+      </div>
+      <script>
+        initLights();
+        switchColor();
+      </script>
+      <button onclick="switchColor()">Наступний колір</button>
+    </section>
   </body>
 </html>

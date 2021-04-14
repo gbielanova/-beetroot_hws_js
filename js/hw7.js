@@ -47,6 +47,7 @@ function printPlayList() {
     });
 }
 
+// task 2
 function showModalWindow() {
     var modal = document.getElementById("modal");
     var btn = document.getElementById("openModal");
@@ -65,4 +66,37 @@ function showModalWindow() {
             modal.style.display = "none";
         }
     }
+}
+
+// task3 
+let lights;
+let stage = 0;
+
+function initLights() {
+    lights = document.getElementsByClassName('light');
+}
+
+function switchColor() {
+    switch (stage % 4) {
+        case 0:
+            lights[0].style.background = 'red';
+            lights[1].style.background = 'black';
+            lights[2].style.background = 'black';
+            break;
+        case 1:
+            lights[1].style.background = 'yellow';
+            lights[2].style.background = 'black';
+            break;
+        case 2:
+            lights[0].style.background = 'black';
+            lights[1].style.background = 'black';
+            lights[2].style.background = 'green';
+            break;
+        case 3:
+            lights[0].style.background = 'black';
+            lights[1].style.background = 'yellow';
+            lights[2].style.background = 'black';
+            break;
+    }
+    stage++;
 }

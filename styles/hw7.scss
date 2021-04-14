@@ -19,3 +19,23 @@
   width: 50%;
   text-align: center;
 }
+
+#semafor {
+  background: black;
+  border: 2px solid grey;
+  border-radius: 20px;
+  width: 350px;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.light {
+  border: 1px solid grey;
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+}
