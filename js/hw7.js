@@ -39,6 +39,12 @@ function printPlayList() {
     list.setAttribute("id", "playlist");
     document.body.appendChild(list);
 
+    let sections = document.getElementsByTagName('section');
+    let color = window.getComputedStyle(sections[0]).backgroundColor;
+    list.style.backgroundColor = color;
+    list.style.margin = 0;
+    list.style.padding = '10px 10px 30px 30px';
+
     playList.forEach(element => {
         var y = document.createElement("LI");
         var t = document.createTextNode(`${element.author} - ${element.song}`);
