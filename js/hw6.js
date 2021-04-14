@@ -6,6 +6,14 @@ function checkNumberGreaterZero(value) {
     return true;
 }
 
+function checkTextNotEmpty(str) {
+    if (str == '') {
+        alert("Невалідна строка");
+        return false;
+    }
+    return true;
+}
+
 // task1
 class Circle {
     constructor(radius) {
@@ -68,4 +76,26 @@ document.getElementById("initial_r").innerHTML = circle.radius;
 
 printActualCircle()
 
+// task2
+const MarkerUsedPerSymbol = 0.5;
 
+class Marker {
+
+    color;
+    volume = 100;
+
+    constructor(color) {
+        this.color = color;
+    }
+
+    print(text) {
+        if (checkTextNotEmpty(text)) {
+            let textToPrint = String(text).replace(' ', '');
+
+            console.log(textToPrint.length);
+        }
+    }
+}
+
+let marker = new Marker('blue');
+marker.print("hello world");
