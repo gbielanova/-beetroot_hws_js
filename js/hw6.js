@@ -99,7 +99,7 @@ class Marker {
             this.volume -= symbolsToPrint;
         } else {
             let couldPrintText = '';
-            for (let i = 0; i <= this.volume + textToPrint.split(' ').length - 1; i++) {
+            for (let i = 0; i < this.volume + textToPrint.split(' ').length - 1; i++) {
                 couldPrintText += textToPrint[i];
             }
             textToPrint = couldPrintText;
@@ -107,6 +107,16 @@ class Marker {
             alert(`${this.color} маркер скінчився!`)
         }
         return textToPrint;
+    }
+}
+
+class FillMarker extends Marker {
+    constructor(color) {
+        super(color);
+    }
+
+    reFill() {
+        this.volume = 100;
     }
 }
 
@@ -119,7 +129,8 @@ function printText(marker, idGet, idPrint) {
     textField.style.color = marker.color;
     textField.innerHTML = marker.print(text);
 
-    console.log('Debug info: marker volume left:', marker.volume);
+    console.log(`Debug info: marker ${marker.color} volume left:`, marker.volume);
 }
 
 let marker = new Marker('blue');
+let fillMarker = new FillMarker('red');
