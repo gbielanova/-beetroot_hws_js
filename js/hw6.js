@@ -80,7 +80,6 @@ printActualCircle()
 const MarkerUsedPerSymbol = 0.5;
 
 class Marker {
-
     color;
     volume = 100;
 
@@ -89,13 +88,38 @@ class Marker {
     }
 
     print(text) {
-        if (checkTextNotEmpty(text)) {
-            let textToPrint = String(text).replace(' ', '');
-
-            console.log(textToPrint.length);
+        if (!checkTextNotEmpty(text)) {
+            return;
         }
+
+        let textToPrint = String(text);
+        let symbolsToPrint = textToPrint.replace(' ', '').length;
+
+        if (symbolsToPrint <= this.volume) {
+            this.volume -= symbolsToPrint;
+        } else {
+            let couldPrintText = '';
+            for (let i = 0; i <= this.volume + textToPrint.split(' ').length - 1; i++) {
+                couldPrintText += textToPrint[i];
+            }
+            textToPrint = couldPrintText;
+            this.volume = 0;
+            alert(`${this.color} маркер скінчився!`)
+        }
+        return textToPrint;
     }
 }
 
+function printText(marker, idGet, idPrint) {
+    let text = document.getElementById(idGet).value;
+
+    if (!checkTextNotEmpty(text)) return;
+
+    let textField = document.getElementById(idPrint);
+    textField.style.color = marker.color;
+    textField.innerHTML = marker.print(text);
+
+    console.log('Debug info: marker volume left:', marker.volume);
+}
+
 let marker = new Marker('blue');
-marker.print("hello world");
