@@ -134,3 +134,63 @@ function printText(marker, idGet, idPrint) {
 
 let marker = new Marker('blue');
 let fillMarker = new FillMarker('red');
+
+// task3
+class Employee {
+    constructor(firstName, lastName, department, position) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+        this.position = position;
+    }
+}
+
+class EmpTable {
+    constructor(empArr) {
+        this.array = empArr;
+    }
+
+    getHtml() {
+        let table = document.createElement("TABLE");
+        table.classList.add('EmpTable');
+        document.body.appendChild(table);
+
+        // print header
+        let row = document.createElement('TR');
+        row.classList.add('EmpTable__row', 'EmpTable__row--header');
+        table.appendChild(row);
+
+        for (let key in this.array[0]) {
+            let column = document.createElement('TD');
+            column.classList.add('EmpTable__column');
+            let cell = document.createTextNode(key);
+            column.appendChild(cell);
+            row.appendChild(column);
+        }
+
+        // print body
+        this.array.forEach(element => {
+            row = document.createElement('TR');
+            row.classList.add('EmpTable__row');
+            table.appendChild(row);
+            for (let key in this.array[0]) {
+                let column = document.createElement('TD');
+                column.classList.add('EmpTable__column');
+                let cell = document.createTextNode(element[key]);
+                column.appendChild(cell);
+                row.appendChild(column);
+            }
+        });
+    }
+}
+
+let employeesArray = [new Employee('Федор', 'Киврин', 'Отдел Линейного Счастья', 'заведующий'),
+new Employee('Кристобаль', 'Хунта', 'Отдел Смысла Жизни', 'заведующий'),
+new Employee('Морис-Иоганн-Лаврентий', 'Пупков-Задний', 'Отдел Абсолютного Знания', 'заведующий'),
+new Employee('Мерлин', '', 'Отдел Предсказаний и Пророчеств', 'претендент на заведующего'),
+new Employee('Жиан', 'Жиакомо', 'Отдел Универсальных Превращений', 'заведующий'),
+new Employee('Саваоф', 'Один', 'Отдел Технического Обеспечения', 'заведующий'),
+new Employee('Роман', 'Ойра-Ойра', 'Отдел Недоступных Проблем', 'сотрудник ')]
+
+let table = new EmpTable(employeesArray);
+table.getHtml();
