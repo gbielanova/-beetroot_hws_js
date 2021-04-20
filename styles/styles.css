@@ -57,4 +57,23 @@ section p {
   border: 1px solid #c0c0c0;
   padding: 5px;
 }
+
+#resize {
+  border: 5px double black;
+  min-height: 100px;
+  height: 100px;
+  min-width: 100px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  overflow: auto;
+}
 /*# sourceMappingURL=styles.css.map */

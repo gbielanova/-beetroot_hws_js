@@ -61,3 +61,19 @@ let tblHeaders = document.getElementsByClassName('tablepress_header');
 for (let i = 0; i < tblHeaders.length; i++) {
     tblHeaders[i].addEventListener("click", function () { sortTable(i) }, false);
 }
+
+//task3
+// it will be too easy, but there is no need to invent a wheel, so i will add at least listener, 
+// to not make block resizable by default and only after user click in right left corner
+let elToResize = document.getElementById("resize");
+
+let bounds = elToResize.getBoundingClientRect();
+let viewWidth = document.documentElement.clientWidth;
+let viewHeight = document.documentElement.clientHeight;
+
+elToResize.addEventListener('click', function (event) {
+    if (elToResize.offsetWidth - event.offsetX < 50 && elToResize.offsetHeight - event.offsetY < 50) {
+        elToResize.style.resize = "both";
+    }
+});
+elToResize.addEventListener('mouseleave', function () { elToResize.style.resize = "none"; });
