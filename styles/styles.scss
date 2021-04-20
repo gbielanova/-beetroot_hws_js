@@ -28,3 +28,13 @@ section {
 .quizz {
   display: block;
 }
+
+.edit__block {
+  &--hidden {
+    display: none;
+  }
+
+  &--visible {
+    display: block;
+  }
+}

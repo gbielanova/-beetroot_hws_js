@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>JS HW 8</title>
+  </head>
+  <body>
+    <section>
+      <h4>
+        Створити HTML-сторінку для відображення/редагування текста. При
+        відкритті сторінки текст має відображатися за допомогою тега div. При
+        натисненні Ctrl+E замість div має з'являтися textarea з тим самим
+        текстом, який тепер можно редагувати. При натиснення Ctrl+, замість
+        textarea має з'являтися div з вже зміненим текстом. Не забудьте викнути
+        поведінку за замовчуванням для цих комбінацій клавіш.
+      </h4>
+      <div id="divToEdit" class="edit__block--visible">My div text</div>
+      <textarea
+        id="textAreaToEdit"
+        cols="30"
+        rows="10"
+        class="edit__block--hidden"
+      ></textarea>
+    </section>
+    <script src="js/hw8.js"></script>
+  </body>
+</html>

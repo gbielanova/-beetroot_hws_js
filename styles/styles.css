@@ -28,4 +28,12 @@ section p {
 .quizz {
   display: block;
 }
+
+.edit__block--hidden {
+  display: none;
+}
+
+.edit__block--visible {
+  display: block;
+}
 /*# sourceMappingURL=styles.css.map */
