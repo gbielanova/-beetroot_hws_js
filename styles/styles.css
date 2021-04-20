@@ -43,6 +43,10 @@ section p {
   padding: 5px;
 }
 
+.tablepress_header {
+  cursor: pointer;
+}
+
 .tablepress th {
   border: 1px solid #c0c0c0;
   padding: 5px;
@@ -52,13 +56,5 @@ section p {
 .tablepress td {
   border: 1px solid #c0c0c0;
   padding: 5px;
-}
-
-.tablepress .even {
-  background-color: #fff3e1;
-}
-
-.tablepress .odd {
-  background-color: #f5f4f4;
 }
 /*# sourceMappingURL=styles.css.map */
