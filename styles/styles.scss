@@ -38,3 +38,28 @@ section {
     display: block;
   }
 }
+
+.tablepress {
+  border: 1px solid #b6b5b5;
+  border-collapse: collapse;
+  padding: 5px;
+
+  th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    background: #f0f0f0;
+  }
+
+  td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+  }
+
+  .even {
+    background-color: rgb(255, 243, 225);
+  }
+
+  .odd {
+    background-color: rgb(245, 244, 244);
+  }
+}

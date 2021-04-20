@@ -25,6 +25,921 @@
         class="edit__block--hidden"
       ></textarea>
     </section>
+    <section>
+      <h4>
+        Створити HTML-сторінку з великою таблицею. При кліку на заголовок
+        колонки, необхідно відсортувати данні по цій колонці. Чисельні значення
+        мають сортуватися як числа, а не як строки.
+      </h4>
+      <table id="tablepress" class="tablepress">
+        <thead>
+          <tr class="row-1 odd">
+            <th class="column-1"><strong>Прапор</strong></th>
+            <th class="column-2"><strong>Назва країни</strong></th>
+            <th class="column-3"><strong>Площа¹ (км²)</strong></th>
+            <th class="column-4">
+              <strong>Населення² (тис. осіб, липень 2017 р.)</strong>
+            </th>
+            <th class="column-5"><strong>Столиця</strong></th>
+          </tr>
+        </thead>
+        <tbody class="row-hover">
+          <tr class="row-2 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/avstriya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-592"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/avstriya.png"
+                  alt="Флаг Австрии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Австрія</td>
+            <td class="column-3">83 871</td>
+            <td class="column-4">8 754</td>
+            <td class="column-5">Відень</td>
+          </tr>
+          <tr class="row-3 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Албания.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2268"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Албания.png"
+                  alt="Флаг Албании"
+                  width="28"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Албанія</td>
+            <td class="column-3">28 748</td>
+            <td class="column-4">3 047</td>
+            <td class="column-5">Тирана</td>
+          </tr>
+          <tr class="row-4 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Андорра.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2274"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Андорра.png"
+                  alt="Флаг Андорры"
+                  width="29"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Андорра</td>
+            <td class="column-3">468</td>
+            <td class="column-4">85,7</td>
+            <td class="column-5">Андорра-ла-Велья</td>
+          </tr>
+          <tr class="row-5 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/belgiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-593"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/belgiya.png"
+                  alt="Флаг Бельгии"
+                  width="23"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Бельгія</td>
+            <td class="column-3">30 528</td>
+            <td class="column-4">11 491</td>
+            <td class="column-5">Брюссель</td>
+          </tr>
+          <tr class="row-6 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Беларусь.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2285"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Беларусь.png"
+                  alt="Флаг Беларуси"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Білорусь</td>
+            <td class="column-3">207 600</td>
+            <td class="column-4">9 549</td>
+            <td class="column-5">Мінськ</td>
+          </tr>
+          <tr class="row-7 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/bolgariya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-595"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/bolgariya.png"
+                  alt="Флаг Болгарии"
+                  width="30"
+                  height="18"
+              /></a>
+            </td>
+            <td class="column-2">Болгарія</td>
+            <td class="column-3">110 879</td>
+            <td class="column-4">7 101</td>
+            <td class="column-5">Софія</td>
+          </tr>
+          <tr class="row-8 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/bosniya_i_gertsegovina.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-596"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/bosniya_i_gertsegovina.png"
+                  alt="Флаг Боснии"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Боснія і Герцеговина</td>
+            <td class="column-3">51 197</td>
+            <td class="column-4">3 856</td>
+            <td class="column-5">Сараєво</td>
+          </tr>
+          <tr class="row-9 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/vatikan.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-632"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/vatikan.png"
+                  alt="Флаг Ватикана"
+                  width="20"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Ватикан</td>
+            <td class="column-3">0,44</td>
+            <td class="column-4">1</td>
+            <td class="column-5">Ватикан</td>
+          </tr>
+          <tr class="row-10 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/velikobritaniya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-633"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/velikobritaniya.png"
+                  alt="Флаг Великобритании"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Велика Британія</td>
+            <td class="column-3">243 610</td>
+            <td class="column-4">64 769</td>
+            <td class="column-5">Лондон</td>
+          </tr>
+          <tr class="row-11 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/gretsiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-603"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/gretsiya.png"
+                  alt="Флаг Греции"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Греція</td>
+            <td class="column-3">131 957</td>
+            <td class="column-4">10 768</td>
+            <td class="column-5">Афіни</td>
+          </tr>
+          <tr class="row-12 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/daniya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-599"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/daniya.png"
+                  alt="Флаг Дании"
+                  width="26"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Данія</td>
+            <td class="column-3">43 094</td>
+            <td class="column-4">5 605</td>
+            <td class="column-5">Копенгаген</td>
+          </tr>
+          <tr class="row-13 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Эстония.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2517"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Эстония.png"
+                  alt="Флаг Эстонии"
+                  width="30"
+                  height="19"
+              /></a>
+            </td>
+            <td class="column-2">Естонія</td>
+            <td class="column-3">45 228</td>
+            <td class="column-4">1 251</td>
+            <td class="column-5">Таллінн</td>
+          </tr>
+          <tr class="row-14 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Ирландия.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2346"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Ирландия.png"
+                  alt="Флаг Ирландии"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Ірландія</td>
+            <td class="column-3">70 273</td>
+            <td class="column-4">5 011</td>
+            <td class="column-5">Дублін</td>
+          </tr>
+          <tr class="row-15 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Исландия.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2347"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Исландия.png"
+                  alt="Флаг Исландии"
+                  width="28"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Ісландія</td>
+            <td class="column-3">103 000</td>
+            <td class="column-4">339</td>
+            <td class="column-5">Рейк'явік</td>
+          </tr>
+          <tr class="row-16 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Испания.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2348"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Испания.png"
+                  alt="Флаг Испании"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Іспанія</td>
+            <td class="column-3">505 370</td>
+            <td class="column-4">48 958</td>
+            <td class="column-5">Мадрид</td>
+          </tr>
+          <tr class="row-17 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Италия.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2349"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Италия.png"
+                  alt="Флаг Италии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Італія</td>
+            <td class="column-3">301 340</td>
+            <td class="column-4">62 137</td>
+            <td class="column-5">Рим</td>
+          </tr>
+          <tr class="row-18 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/kazakhstan.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="alignleft wp-image-657"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/kazakhstan-300x150.png"
+                  alt="Флаг Казахстана"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Казахстан (розташований в Азії і Європі)</td>
+            <td class="column-3">2 724 900</td>
+            <td class="column-4">18 556</td>
+            <td class="column-5">Астана</td>
+          </tr>
+          <tr class="row-19 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/kosovo.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-610"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/kosovo.png"
+                  alt="Флаг Косово"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Косово³</td>
+            <td class="column-3">10 887</td>
+            <td class="column-4">1 895</td>
+            <td class="column-5">Приштина</td>
+          </tr>
+          <tr class="row-20 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/latviya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-611"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/latviya.png"
+                  alt="Флаг Латвии"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Латвія</td>
+            <td class="column-3">64 589</td>
+            <td class="column-4">1 944</td>
+            <td class="column-5">Рига</td>
+          </tr>
+          <tr class="row-21 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/litva.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-613"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/litva.png"
+                  alt="Флаг Литвы"
+                  width="30"
+                  height="18"
+              /></a>
+            </td>
+            <td class="column-2">Литва</td>
+            <td class="column-3">65 300</td>
+            <td class="column-4">2 823</td>
+            <td class="column-5">Вільнюс</td>
+          </tr>
+          <tr class="row-22 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Лихтенштейн.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2381"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Лихтенштейн.png"
+                  alt="Флаг Лихтенштейна"
+                  width="30"
+                  height="18"
+              /></a>
+            </td>
+            <td class="column-2">Ліхтенштейн</td>
+            <td class="column-3">160</td>
+            <td class="column-4">38,2</td>
+            <td class="column-5">Вадуц</td>
+          </tr>
+          <tr class="row-23 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/liuksemburg.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-614"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/liuksemburg.png"
+                  alt="Флаг Люксембурга"
+                  width="30"
+                  height="18"
+              /></a>
+            </td>
+            <td class="column-2">Люксембург</td>
+            <td class="column-3">2 586</td>
+            <td class="column-4">594</td>
+            <td class="column-5">Люксембург</td>
+          </tr>
+          <tr class="row-24 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/makedoniya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-615"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/makedoniya.png"
+                  alt="Флаг Македонии"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Македонія</td>
+            <td class="column-3">25 713</td>
+            <td class="column-4">2 103</td>
+            <td class="column-5">Скоп'є</td>
+          </tr>
+          <tr class="row-25 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/malta.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-616"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/malta.png"
+                  alt="Флаг Мальты"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Мальта</td>
+            <td class="column-3">316</td>
+            <td class="column-4">416</td>
+            <td class="column-5">Валлетта</td>
+          </tr>
+          <tr class="row-26 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/moldova.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-617"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/moldova.png"
+                  alt="Флаг Молдовы"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Молдова</td>
+            <td class="column-3">33 851</td>
+            <td class="column-4">3 474</td>
+            <td class="column-5">Кишинів</td>
+          </tr>
+          <tr class="row-27 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/monako.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-618"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/monako.png"
+                  alt="Флаг Монако"
+                  width="25"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Монако</td>
+            <td class="column-3">2,02</td>
+            <td class="column-4">30,6</td>
+            <td class="column-5">Монако</td>
+          </tr>
+          <tr class="row-28 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Нидерланды.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2411"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Нидерланды.png"
+                  alt="Флаг Нидерландов"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Нідерланди</td>
+            <td class="column-3">41 543</td>
+            <td class="column-4">17 084</td>
+            <td class="column-5">Амстердам</td>
+          </tr>
+          <tr class="row-29 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/12/Германия.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-2318"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/12/Германия.png"
+                  alt="Флаг Германии"
+                  width="30"
+                  height="18"
+              /></a>
+            </td>
+            <td class="column-2">Німеччина</td>
+            <td class="column-3">357 022</td>
+            <td class="column-4">80 594</td>
+            <td class="column-5">Берлін</td>
+          </tr>
+          <tr class="row-30 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/norvegiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-620"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/norvegiya.png"
+                  alt="Флаг Норвегии"
+                  width="28"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Норвегія</td>
+            <td class="column-3">323 802</td>
+            <td class="column-4">5 320</td>
+            <td class="column-5">Осло</td>
+          </tr>
+          <tr class="row-31 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/polsha.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-621"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/polsha.png"
+                  alt="Флаг Польшы"
+                  width="30"
+                  height="19"
+              /></a>
+            </td>
+            <td class="column-2">Польща</td>
+            <td class="column-3">312 685</td>
+            <td class="column-4">38 476</td>
+            <td class="column-5">Варшава</td>
+          </tr>
+          <tr class="row-32 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/portugaliya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-622"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/portugaliya.png"
+                  alt="Флаг Португалии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Португалія</td>
+            <td class="column-3">92 090</td>
+            <td class="column-4">10 839</td>
+            <td class="column-5">Лісабон</td>
+          </tr>
+          <tr class="row-33 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/rossiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-623"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/rossiya.png"
+                  alt="Флаг России"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Росія (розташована в Азії і Європі)</td>
+            <td class="column-3">17 098 242</td>
+            <td class="column-4">142 257</td>
+            <td class="column-5">Москва</td>
+          </tr>
+          <tr class="row-34 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/rumyniya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-624"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/rumyniya.png"
+                  alt="Флаг Румынии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Румунія</td>
+            <td class="column-3">238 391</td>
+            <td class="column-4">21 529</td>
+            <td class="column-5">Бухарест</td>
+          </tr>
+          <tr class="row-35 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/sam-marino.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-625"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/sam-marino.png"
+                  alt="Флаг Сан-Марино"
+                  width="27"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Сан-Марино</td>
+            <td class="column-3">61</td>
+            <td class="column-4">33,5</td>
+            <td class="column-5">Сан-Марино</td>
+          </tr>
+          <tr class="row-36 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/serbiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-626"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/serbiya.png"
+                  alt="Флаг Сербии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Сербія (без Косово)</td>
+            <td class="column-3">77 474</td>
+            <td class="column-4">7 111</td>
+            <td class="column-5">Белград</td>
+          </tr>
+          <tr class="row-37 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/slovakiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-629"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/slovakiya.png"
+                  alt="Флаг Словакии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Словаччина</td>
+            <td class="column-3">49 035</td>
+            <td class="column-4">5 445</td>
+            <td class="column-5">Братислава</td>
+          </tr>
+          <tr class="row-38 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/sloveniya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-630"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/sloveniya.png"
+                  alt="Флаг Словении"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Словенія</td>
+            <td class="column-3">20 273</td>
+            <td class="column-4">1 972</td>
+            <td class="column-5">Любляна</td>
+          </tr>
+          <tr class="row-39 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/turtsiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="alignleft wp-image-682"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/turtsiya-300x200.png"
+                  alt="Флаг Турции"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Туреччина (розташована в Азії і Європі)</td>
+            <td class="column-3">783 562</td>
+            <td class="column-4">80 845</td>
+            <td class="column-5">Анкара</td>
+          </tr>
+          <tr class="row-40 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/vengriya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-634"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/vengriya.png"
+                  alt="Флаг Венгрии"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Угорщина</td>
+            <td class="column-3">93 028</td>
+            <td class="column-4">9 850</td>
+            <td class="column-5">Будапешт</td>
+          </tr>
+          <tr class="row-41 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/ukrayina.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-631"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/ukrayina.png"
+                  alt="Флаг Украины"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Україна</td>
+            <td class="column-3">603 550</td>
+            <td class="column-4">44 033</td>
+            <td class="column-5">Київ</td>
+          </tr>
+          <tr class="row-42 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/finlyandiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-600"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/finlyandiya.png"
+                  alt="Флаг Финляндии"
+                  width="30"
+                  height="18"
+              /></a>
+            </td>
+            <td class="column-2">Фінляндія</td>
+            <td class="column-3">336 563</td>
+            <td class="column-4">5 518</td>
+            <td class="column-5">Гельсінкі</td>
+          </tr>
+          <tr class="row-43 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/frantsiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-601"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/frantsiya.png"
+                  alt="Флаг Франции"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Франція</td>
+            <td class="column-3">643 801</td>
+            <td class="column-4">67 106</td>
+            <td class="column-5">Париж</td>
+          </tr>
+          <tr class="row-44 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/khorvatiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-608"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/khorvatiya.png"
+                  alt="Флаг Хорватии"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Хорватія</td>
+            <td class="column-3">56 594</td>
+            <td class="column-4">4 292</td>
+            <td class="column-5">Загреб</td>
+          </tr>
+          <tr class="row-45 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/chekhiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-597"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/chekhiya.png"
+                  alt="Флаг Чехии"
+                  width="30"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Чехія</td>
+            <td class="column-3">78 867</td>
+            <td class="column-4">10 674</td>
+            <td class="column-5">Прага</td>
+          </tr>
+          <tr class="row-46 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/chernogoriya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-598"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/chernogoriya.png"
+                  alt="Флаг Черногории"
+                  width="30"
+                  height="15"
+              /></a>
+            </td>
+            <td class="column-2">Чорногорія</td>
+            <td class="column-3">13 812</td>
+            <td class="column-4">642</td>
+            <td class="column-5">Подгориця</td>
+          </tr>
+          <tr class="row-47 odd">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/shveytsariya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-628"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/shveytsariya.png"
+                  alt="Флаг Швейцарии"
+                  width="20"
+                  height="20"
+              /></a>
+            </td>
+            <td class="column-2">Швейцарія</td>
+            <td class="column-3">41 277</td>
+            <td class="column-4">8 236</td>
+            <td class="column-5">Берн</td>
+          </tr>
+          <tr class="row-48 even">
+            <td class="column-1">
+              <a
+                href="http://merkator.org.ua/wp-content/uploads/2017/10/shvetsiya.png"
+                target="_blank"
+                rel="noopener"
+                ><img
+                  class="aligncenter wp-image-627"
+                  src="http://merkator.org.ua/wp-content/uploads/2017/10/shvetsiya.png"
+                  alt="Флаг Швеции"
+                  width="30"
+                  height="19"
+              /></a>
+            </td>
+            <td class="column-2">Швеція</td>
+            <td class="column-3">450 295</td>
+            <td class="column-4">9 960</td>
+            <td class="column-5">Стокгольм</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
     <script src="js/hw8.js"></script>
   </body>
 </html>
