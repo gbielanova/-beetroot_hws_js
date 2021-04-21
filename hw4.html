@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/hw4.js"></script>
+    <title>JS HW 4</title>
+  </head>
+  <body>
+    <section>
+      <h4>
+        Створити об'єкт, що описує автомобіль (виробник, модель, рік випуску,
+        середня швидкість) та має такі функції для роботи з цим об'єктом:
+      </h4>
+      <ul>
+        <li>функція для виводу на екран інформації про автомобіль</li>
+        <li>
+          функція для підрахунку необхідного часу для подолання відстані з
+          середньою швидкістю (врахуйте, що через кожні 4 години дороги водій
+          має зробити перерву на 1 годину)
+        </li>
+      </ul>
+      <label>Вкажіть виробника <input type="text" id="producer" /></label>
+      <br />
+      <label>Вкажіть модель <input type="text" id="model" /></label> <br />
+      <label
+        >Вкажіть рік випуску <input type="text" id="production_year"
+      /></label>
+      <br />
+      <label
+        >Вкажіть середню швидкість <input type="text" id="avg_speed"
+      /></label>
+      <br />
+      <button onclick="makeCarWrapper()">
+        Натисність, щоб створити об'єкт автомобіль!
+      </button>
+      <p id="car"></p>
+      <label
+        >Вкажіть скільки кілометрів треба подолати <input type="text" id="dest"
+      /></label>
+      <button onclick="getEstimate()">
+        Натисність, щоб за скільки ви доїдете.
+      </button>
+      <p id="time"></p>
+    </section>
+
+    <section>
+      <h4>
+        Створити об'єкт, що зберігає в собі окремо чисельник та знаменник дробу,
+        та наступні функції для роботи з цим об'єктом:
+      </h4>
+      <ul>
+        <li>функція складання 2х об'єктів-дробів</li>
+        <li>функція вирахування 2х об'єктів-дробів</li>
+        <li>функція помноження 2х об'єктів-дробів</li>
+        <li>функція ділення 2х об'єктів-дробів</li>
+        <li>функція скорочення об'єкта-дробі</li>
+      </ul>
+      <label>Перша дроб: <input type="text" id="fr1_num" /></label>
+      <label>/ <input type="text" id="fr1_den" /></label>
+      <br />
+      <label>Друга дроб: <input type="text" id="fr2_num" /></label>
+      <label>/ <input type="text" id="fr2_den" /></label>
+      <br />
+      <button onclick="testFunctions()">
+        Натисність, щоб виконани операції
+      </button>
+      <p id="fr_sum"></p>
+      <p id="fr_diff"></p>
+      <p id="fr_mult"></p>
+      <p id="fr_div"></p>
+    </section>
+
+    <section>
+      <h4>
+        Створити об'єкт, що описує час (години, хвилини, секунди) та має такі
+        функції для роботи з цим об'єктом:
+      </h4>
+      <ul>
+        <li>функція виводу часу на екран</li>
+        <li>функція зміни часу на передану кількість секунд</li>
+        <li>функція зміни часу на передану кількість хвилин</li>
+        <li>функція зміни часу на передану кількість годин</li>
+      </ul>
+      <label>години <input type="text" id="hh" /></label>
+      <br />
+      <label>хвилини <input type="text" id="min" /></label> <br />
+      <label>секунди <input type="text" id="sec" /></label> <br />
+      <button onclick="showTimeWrapper()">Натисність, щоб побачити час!</button>
+      <p id="time_task3"></p>
+      <p>Час змінений на 10 секунд: <span id="time_sec"></span></p>
+      <p>Час змінений на 20 хвилин: <span id="time_min"></span></p>
+      <p>Час змінений на 30 годин: <span id="time_hh"></span></p>
+    </section>
+  </body>
+</html>
