@@ -15,7 +15,10 @@ function makeCar(producer, model, production_year, avg_speed) {
             let rest_times = Math.floor(time / 4);
             // Since driver need to rest for 1h we don't need to have any multipliers here
             time = time + rest_times;
-            return time;
+            hh = (Math.floor(time) > 10) ? Math.floor(time) : `0${Math.floor(time)}`;
+            minCalc = Math.round(time % 1 * 100 * 0.6);
+            min = (minCalc > 10) ? minCalc : `0${minCalc}`;
+            return `${hh}:${min}`;
         },
     }
 
@@ -43,7 +46,7 @@ function getEstimate() {
     if (dest == '' || dest == 0 || Number.isNaN(dest)) { alert("Будь ласка заповніть відстань"); }
     if (Car == undefined) { alert("Будь ласка створіть спершу машину"); }
 
-    document.getElementById("time").innerHTML = `Ви подолаєте цю відстань за ${Car.calcTime(dest)} годин`;
+    document.getElementById("time").innerHTML = `Ви подолаєте цю відстань за ${Car.calcTime(dest)}`;
 }
 
 // task2
@@ -57,7 +60,7 @@ function makeFraction(numerator, denominator) {
             if (this.numerator == 0) {
                 res = 0;
             } else if (this.numerator > this.denominator) {
-                res = `${Math.floor(this.numerator / this.denominator)} 
+                res = `${Math.floor(this.numerator / this.denominator)} ціла/цілих та 
                         ${this.numerator % this.denominator}/${this.denominator}`;
             }
             return res;
@@ -133,29 +136,29 @@ function testFunctions() {
     let summ_fr_cleared = Object.assign({}, summ_fr);
     summ_fr_cleared.clear();
     document.getElementById("fr_sum").innerHTML = `${fr1.printFraction()} + 
-                                        ${fr2.printFraction()}=${summ_fr.printFraction()}=
-                                        ${summ_fr_cleared.printFraction()}`;
+                                        ${fr2.printFraction()}=${summ_fr.printFraction()},
+                                        або спрощена дріб = ${summ_fr_cleared.printFraction()}`;
 
     diff_fr = fr1.diff(fr2);
     let diff_fr_cleared = Object.assign({}, diff_fr);
     diff_fr_cleared.clear();
     document.getElementById("fr_diff").innerHTML = `${fr1.printFraction()} - 
-                                        ${fr2.printFraction()}=${diff_fr.printFraction()}=
-                                        ${diff_fr_cleared.printFraction()}`;
+                                        ${fr2.printFraction()}=${diff_fr.printFraction()},
+                                        або спрощена дріб = ${diff_fr_cleared.printFraction()}`;
 
     mult_fr = fr1.mult(fr2);
     let mult_fr_cleared = Object.assign({}, mult_fr);
     mult_fr_cleared.clear();
     document.getElementById("fr_mult").innerHTML = `${fr1.printFraction()} * 
-                                ${fr2.printFraction()}=${mult_fr.printFraction()}=
-                                ${mult_fr_cleared.printFraction()}`;
+                                ${fr2.printFraction()}=${mult_fr.printFraction()},
+                                або спрощена дріб = ${mult_fr_cleared.printFraction()}`;
 
     div_fr = fr1.div(fr2);
     let div_fr_cleared = Object.assign({}, div_fr);
     div_fr_cleared.clear();
     document.getElementById("fr_div").innerHTML = `${fr1.printFraction()} / 
-                                ${fr2.printFraction()}=${div_fr.printFraction()}=
-                                 ${div_fr_cleared.printFraction()}`;
+                                ${fr2.printFraction()}=${div_fr.printFraction()},
+                                або спрощена дріб = ${div_fr_cleared.printFraction()}`;
 }
 
 // task3 
