@@ -15,8 +15,8 @@ function printShoppingList() {
 }
 
 function addToShoppingList() {
-    let product_name = document.getElementById("product_name").value;
-    let product_qwt = Number(document.getElementById("product_qwt").value);
+    let product_name = document.getElementById("product_name").value.trim();
+    let product_qwt = Number(document.getElementById("product_qwt").value.trim());
 
     if (product_name == '') {
         alert('Введіть валідну назву');
@@ -48,6 +48,9 @@ function addToShoppingList() {
         })
     }
     else {
+        if (shoppingList[idx].bought) {
+            alert('Цей продукт вже був куплений, кількість буде збільшена, але статус не зміниться.')
+        }
         shoppingList[idx].qwt += product_qwt;
     }
 
@@ -56,11 +59,8 @@ function addToShoppingList() {
 
 function buyProduct() {
     let product_name = document.getElementById("product_buy").value.trim();
-    names = [];
 
-    shoppingList.forEach(element => {
-        names.push(element.name);
-    });
+    const names = shoppingList.map(element => element.name)
 
     if (product_name == '') {
         alert('Введіть валідну назву');
@@ -91,11 +91,10 @@ let receipt = [
 ]
 
 function printReceipt(rcpt) {
-    let print_str = 'назва   -  кількість   -  куплен';
+    let print_str = 'назва   -  кількість   -  ціна';
 
-    rcpt.forEach(function (item) {
-        print_str += `<br />${item.name}  -  ${item.qwt}  -  ${item.price}`;
-    });
+    print_str += rcpt.map(item => `<br />${item.name}  -  ${item.qwt}  -  ${item.price}`);
+
     document.getElementById("print_receipt").innerHTML = print_str;
 }
 
