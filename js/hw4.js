@@ -3,14 +3,12 @@ let Car;
 
 function makeCar(producer, model, production_year, avg_speed) {
     let car = {
-        producer: producer,
-        model: model,
-        production_year: production_year,
-        avg_speed: avg_speed,
+        producer,
+        model,
+        production_year,
+        avg_speed,
 
-        printCar() {
-            return `Авто має модель ${this.model}, було виготовлено ${this.producer} у ${this.production_year} та має середню швидкість ${this.avg_speed} км/год.`;
-        },
+        printCar: () => `Авто має модель ${model}, було виготовлено ${producer} у ${production_year} та має середню швидкість ${avg_speed} км/год.`,
 
         calcTime(dest) {
             let time = dest / this.avg_speed;
@@ -31,13 +29,7 @@ function makeCarWrapper() {
     let avg_speed = Number(document.getElementById("avg_speed").value);
 
     let errors = 0;
-    for (item of [producer, model, production_year, avg_speed]) {
-        if (item == '' || item == 0 || Number.isNaN(item)) {
-            errors++;
-        }
-    }
-
-    if (errors > 0) { alert("Будь ласка заповніть всі поля"); }
+    if (!producer || !model || !production_year || !avg_speed) { alert("Будь ласка заповніть всі поля"); }
     else {
         Car = makeCar(producer, model, production_year, avg_speed);
 
