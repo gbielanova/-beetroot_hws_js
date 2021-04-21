@@ -16,13 +16,11 @@ section:nth-child(even) {
 
 section h4,
 section label,
-section p,
-section h5 {
+section p {
   margin: 5px;
 }
 
-section p,
-section span {
+section p {
   color: maroon;
   font-weight: bold;
 }
