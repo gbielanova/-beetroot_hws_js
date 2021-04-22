@@ -41,12 +41,13 @@ $(".calculator__clear").on('click', function () {
 })
 
 $(".calculator__equal").on('click', function () {
-
     let input = result.innerText.split(' ');
-    console.log(input);
 
-    // here should be logic for operation weight, i.e. * / higher then + -
-    // but it will be skipped at this hw 
+    while (input.indexOf('*') != -1 || input.indexOf('/') != -1) {
+        let idx = (input.indexOf('*') > 0) ? input.indexOf('*') : (input.indexOf('/') > 0) ? input.indexOf('/') : -1;
+        input.splice(idx - 1, 3, doOperation(input[idx - 1], input[idx + 1], input[idx]));
+    }
+
     let calc = input[0];
     for (let i = 1; i < input.length; i += 2) {
         calc = doOperation(calc, input[i + 1], input[i]);
