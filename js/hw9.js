@@ -43,6 +43,12 @@ $(".calculator__clear").on('click', function () {
 $(".calculator__equal").on('click', function () {
     let input = result.innerText.split(' ');
 
+    if (input.length < 3) {
+        result.innerText += ' = bad request';
+        newRound = true;
+        return;
+    }
+
     while (input.indexOf('*') != -1 || input.indexOf('/') != -1) {
         let idx = (input.indexOf('*') > 0) ? input.indexOf('*') : (input.indexOf('/') > 0) ? input.indexOf('/') : -1;
         input.splice(idx - 1, 3, doOperation(input[idx - 1], input[idx + 1], input[idx]));
