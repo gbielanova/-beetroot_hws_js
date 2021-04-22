@@ -60,7 +60,7 @@ $(".calculator__equal").on('click', function () {
 function doOperation(a, b, operation) {
     a = +a;
     b = +b;
-    if (!a || !b) { return 'unsupported operation' };
+    if (Number.isNaN(a) || Number.isNaN(b)) { return 'unsupported operation' };
 
     switch (operation) {
         case '+':
