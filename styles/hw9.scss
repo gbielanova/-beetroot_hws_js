@@ -1,7 +1,13 @@
+.calc__section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .calculator {
   border: 1px solid #b6b5b5;
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
 
   & td {
     border: 1px solid #c0c0c0;
@@ -15,6 +21,7 @@
   &__clear,
   &__equal {
     text-align: center;
+    width: 20%;
   }
 
   &__result {
