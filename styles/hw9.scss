@@ -1,0 +1,23 @@
+.calculator {
+  border: 1px solid #b6b5b5;
+  border-collapse: collapse;
+  width: 100%;
+
+  & td {
+    border: 1px solid #c0c0c0;
+    padding: 30px;
+    font-weight: 900;
+    font-size: xx-large;
+  }
+
+  &__digit,
+  &__operation,
+  &__clear,
+  &__equal {
+    text-align: center;
+  }
+
+  &__result {
+    text-align: right;
+  }
+}

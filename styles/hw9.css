@@ -1,0 +1,21 @@
+.calculator {
+  border: 1px solid #b6b5b5;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.calculator td {
+  border: 1px solid #c0c0c0;
+  padding: 30px;
+  font-weight: 900;
+  font-size: xx-large;
+}
+
+.calculator__digit, .calculator__operation, .calculator__clear, .calculator__equal {
+  text-align: center;
+}
+
+.calculator__result {
+  text-align: right;
+}
+/*# sourceMappingURL=hw9.css.map */
