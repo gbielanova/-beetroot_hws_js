@@ -8,9 +8,26 @@ $(".calculator__digit").on('click', function () {
 
     if (newRound === true) { result.innerText = ''; newRound = false };
 
-    (OPERATIONS.indexOf(result.innerText[result.innerText.length - 1]) == -1) ?
-        result.innerText += this.innerText :
-        result.innerText += ' ' + this.innerText;
+    // this can be written with less code, but here readability is more important. 
+    // if previous symbol was a number
+    if (OPERATIONS.indexOf(result.innerText[result.innerText.length - 1]) == -1) {
+        result.innerText += this.innerText;
+    }
+    else {
+        // if previous symbol was an operation, but it's negative sign and there is one more operator before
+        if (OPERATIONS.indexOf(result.innerText[result.innerText.length - 3]) > -1 &&
+            result.innerText[result.innerText.length - 1] == '-') {
+            result.innerText += this.innerText;
+        } else
+            // if it's first negative number
+            if (result.innerText.length == 1) {
+                result.innerText += this.innerText;
+
+            }
+            else {
+                result.innerText += ' ' + this.innerText;
+            }
+    }
 })
 
 $(".calculator__operation").on('click', function () {
@@ -30,7 +47,6 @@ $(".calculator__equal").on('click', function () {
 
     // here should be logic for operation weight, i.e. * / higher then + -
     // but it will be skipped at this hw 
-    // also missed logic to work with negative numbers
     let calc = input[0];
     for (let i = 1; i < input.length; i += 2) {
         calc = doOperation(calc, input[i + 1], input[i]);
