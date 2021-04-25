@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="stylesheet" href="styles/styles10.css" />
+    <title>JS HW 10</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__about">
+        <h5 class="description">our featured work</h5>
+        <div class="plus"></div>
+      </div>
+      <div class="header__title">
+        <div class="triangle"></div>
+        <h1 class="title">
+          We create engaging experiences through creativity & craft
+        </h1>
+      </div>
+    </header>
+
+    <div class="slider">
+      <div class="slider__item slider__item1"></div>
+      <div class="slider__item slider__item2"></div>
+      <div class="slider__item slider__item3"></div>
+      <div class="slider__item slider__item4"></div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".slider").slick({
+          infinite: true,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        });
+      });
+    </script>
+  </body>
+</html>
