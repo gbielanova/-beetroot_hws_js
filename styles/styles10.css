@@ -85,28 +85,59 @@
   min-height: 44px;
 }
 
-.slider .slider__item {
-  width: 440px;
-  height: 400px;
+.slider {
+  position: relative;
+  width: 70%;
+  margin: auto;
 }
 
-.slider .slider__item1 {
+.slider__item {
+  width: 450px;
+  height: 410px;
+  margin: 10px;
+}
+
+.slider__item1 {
   background-image: url(../images/hw10/img1.png);
   background-size: cover;
 }
 
-.slider .slider__item2 {
+.slider__item2 {
   background-image: url(../images/hw10/img2.png);
   background-size: cover;
 }
 
-.slider .slider__item3 {
+.slider__item3 {
   background-image: url(../images/hw10/img3.png);
   background-size: cover;
 }
 
-.slider .slider__item4 {
+.slider__item4 {
   background-image: url(../images/hw10/img4.png);
   background-size: cover;
+}
+
+.slider .slick-prev,
+.slider .slick-next {
+  background-image: url(../images/hw10/prev_arrow.png);
+  background-size: cover;
+  width: 96px;
+  height: 96px;
+  border: none;
+  color: transparent;
+  background-color: transparent;
+  position: absolute;
+  outline: none;
+  z-index: 1;
+  top: 50%;
+}
+
+.slider .slick-prev {
+  left: -15%;
+}
+
+.slider .slick-next {
+  background-image: url(../images/hw10/next_arrow.png);
+  right: -15%;
 }
 /*# sourceMappingURL=styles10.css.map */
