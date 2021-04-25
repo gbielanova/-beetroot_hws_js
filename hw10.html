@@ -27,10 +27,30 @@
     </header>
 
     <div class="slider">
-      <div class="slider__item slider__item1"></div>
-      <div class="slider__item slider__item2"></div>
-      <div class="slider__item slider__item3"></div>
-      <div class="slider__item slider__item4"></div>
+      <div class="slider__item slider__item1">
+        <div class="cover">
+          <h6 class="cover__text">Apex Magazine June Issue</h6>
+          <p class="cover__author">by Fabrizio Morra</p>
+        </div>
+      </div>
+      <div class="slider__item slider__item2">
+        <div class="cover">
+          <h6 class="cover__text">Item2</h6>
+          <p class="cover__author">by item2</p>
+        </div>
+      </div>
+      <div class="slider__item slider__item3">
+        <div class="cover">
+          <h6 class="cover__text">Item3</h6>
+          <p class="cover__author">by item23</p>
+        </div>
+      </div>
+      <div class="slider__item slider__item4">
+        <div class="cover">
+          <h6 class="cover__text">Item4</h6>
+          <p class="cover__author">by item4</p>
+        </div>
+      </div>
     </div>
 
     <script
@@ -49,6 +69,19 @@
           slidesToShow: 3,
           arrows: true,
         });
+      });
+
+      $(".slider").on("afterChange", function (event, slick, direction) {
+        $(".slick-current .cover").css("display", "block");
+      });
+
+      // need to turn off cover, otherwise all 4 items will be with cover after first round
+      $(".slider").on("beforeChange", function (event, slick, direction) {
+        $(".slick-active .cover").css("display", "none");
+      });
+
+      $(document).ready(function () {
+        $(".slick-current .cover").css("display", "block");
       });
     </script>
   </body>
