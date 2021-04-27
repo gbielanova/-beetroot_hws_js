@@ -1,4 +1,4 @@
-const API = 'http://www.omdbapi.com/?apikey=721371';
+const API = 'https://www.omdbapi.com/?apikey=721371';
 const FORM = document.getElementById("movieSearch");
 let movName = '';
 let movType = '';
