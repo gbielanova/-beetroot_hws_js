@@ -124,6 +124,11 @@ body {
   margin: 10px;
 }
 
+.result-pages__page--current {
+  color: #c44900;
+  font-weight: bold;
+}
+
 .result-pages__page:hover {
   cursor: pointer;
   color: #c44900;

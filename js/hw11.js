@@ -1,6 +1,7 @@
 const API = 'http://www.omdbapi.com/?apikey=721371';
 let movName = '';
 let movType = '';
+let currentPage = 1;
 
 function printResponse(response) {
     if (response['Response'] === 'False') {
@@ -8,7 +9,7 @@ function printResponse(response) {
         return;
     }
 
-    $(".result").append(`<ol class='result-list'></ol>`);
+    $(".result").append(`<ol class='result-list' start='${(currentPage - 1) * 10 + 1}'></ol>`);
 
     response['Search'].forEach(element => {
         let poster = (element['Poster'] != 'N/A') ? `<img src="${element['Poster']}" alt="${element['Title']} poster" class="result-el__poster">` : '';
@@ -26,22 +27,26 @@ function printResponse(response) {
 }
 
 function printPages(totalResults) {
+    if (!totalResults) return;
+
     $(".result").append(`<ul class='result-pages'></ul `);
 
     for (let i = 1; i <= Math.ceil(totalResults / 10); i++) {
         $(".result-pages").append(`<li class="result-pages__page">${i}</li>`);
     }
 
-    let pages = document.getElementsByClassName("result-pages");
-    pages[0].addEventListener('click', function (event) {
-        console.log(event);
-        console.log(event.target.innerText);
+    $(".result-pages__page")[currentPage - 1].classList.add('result-pages__page--current');
 
+    let pages = document.getElementsByClassName("result-pages");
+
+    pages[0].addEventListener('click', function (event) {
         $(".result").empty();
+
+        currentPage = event.target.innerText;
 
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        req.open('GET', `${API}&s=${movName}&type=${movType}&page=${event.target.innerText}`, true);
+        req.open('GET', `${API}&s=${movName}&type=${movType}&page=${currentPage}`, true);
         req.onload = function () {
             if (this.status == 200) {
                 printPages(this.response['totalResults']);

@@ -92,6 +92,11 @@ body {
     margin: 10px;
   }
 
+  &__page--current {
+    color: #c44900;
+    font-weight: bold;
+  }
+
   &__page:hover {
     cursor: pointer;
     color: #c44900;
