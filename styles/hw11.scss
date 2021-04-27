@@ -34,6 +34,7 @@ body {
 .result {
   color: #183a37;
   height: calc(100vh - 100px);
+  width: 100%;
 }
 
 .error {
@@ -77,12 +78,22 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   list-style: none;
   font-size: 30px;
   font-style: bold;
   color: #04151f;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: auto;
 
   &__page {
     padding: 10px;
+    margin: 10px;
+  }
+
+  &__page:hover {
+    cursor: pointer;
+    color: #c44900;
   }
 }

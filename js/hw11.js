@@ -1,8 +1,8 @@
 const API = 'http://www.omdbapi.com/?apikey=721371';
+let movName = '';
+let movType = '';
 
 function printResponse(response) {
-    printPages(response['totalResults']);
-
     if (response['Response'] === 'False') {
         $(".result").append(`<p class='error'>${response['Error']}</p>`);
         return;
@@ -32,33 +32,61 @@ function printPages(totalResults) {
         $(".result-pages").append(`<li class="result-pages__page">${i}</li>`);
     }
 
+    let pages = document.getElementsByClassName("result-pages");
+    pages[0].addEventListener('click', function (event) {
+        console.log(event);
+        console.log(event.target.innerText);
 
+        $(".result").empty();
+
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.open('GET', `${API}&s=${movName}&type=${movType}&page=${event.target.innerText}`, true);
+        req.onload = function () {
+            if (this.status == 200) {
+                printPages(this.response['totalResults']);
+                printResponse(this.response)
+            } else alert('Oops! Something went wrong.');
+        };
+        req.send(null);
+    })
 }
 
 window.addEventListener("load", function () {
     const FORM = document.getElementById("movieSearch");
 
     FORM.addEventListener("submit", function (event) {
+        $(".result").empty();
         event.preventDefault();
 
         const FD = new FormData(FORM);
 
+        movName = FD.get('name');
+        movType = FD.get('type');
+
         var req = new XMLHttpRequest();
         req.responseType = 'json';
-        req.open('GET', `${API}&s=${FD.get('name')}&type=${FD.get('type')}`, true);
+        req.open('GET', `${API}&s=${movName}&type=${movType}`, true);
         req.onload = function () {
-            (this.status == 200) ? printResponse(this.response) : alert('Oops! Something went wrong.');
+            if (this.status == 200) {
+                printPages(this.response['totalResults']);
+                printResponse(this.response)
+            } else alert('Oops! Something went wrong.');
         };
         req.send(null);
     });
 
-
+    // debug
     var req = new XMLHttpRequest();
     req.responseType = 'json';
-    req.open('GET', `${API}&s=avatar&type=movie`, true);
+
+    movName = 'blade';
+    movType = 'movie';
+
+    req.open('GET', `${API}&s=blade&type=movie`, true);
     req.onload = function () {
+        printPages(this.response['totalResults']);
         printResponse(this.response)
     };
     req.send(null);
 });
-
