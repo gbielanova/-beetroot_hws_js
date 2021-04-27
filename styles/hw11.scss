@@ -72,3 +72,17 @@ body {
     max-height: 100px;
   }
 }
+
+.result-pages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  font-size: 30px;
+  font-style: bold;
+  color: #04151f;
+
+  &__page {
+    padding: 10px;
+  }
+}

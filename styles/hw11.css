@@ -93,4 +93,25 @@ body {
 .result-el__poster {
   max-height: 100px;
 }
+
+.result-pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  font-size: 30px;
+  font-style: bold;
+  color: #04151f;
+}
+
+.result-pages__page {
+  padding: 10px;
+}
 /*# sourceMappingURL=hw11.css.map */
