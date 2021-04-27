@@ -30,3 +30,17 @@ body {
   font-size: 30px;
   margin: 10px;
 }
+
+.result {
+  color: #183a37;
+  height: calc(100vh - 100px);
+}
+
+.error {
+  width: 100%;
+  height: 100%;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

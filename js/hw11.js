@@ -1,26 +1,30 @@
 const API = 'http://www.omdbapi.com/?apikey=721371';
 
 function printResponse(response) {
-    console.log(response);
-}
+    console.log(response['Error']);
+    console.log(response['Response']);
 
-
-window.addEventListener("load", function () {
-    function sendData() {
-        const XHR = new XMLHttpRequest();
-        const FD = new FormData(form);
-
-        XHR.open("GET", `${API}&t=${FD.get('name')}&type=${FD.get('type')}`, false);
-
-        XHR.send();
-
-        (XHR.status == 200) ? printResponse(XHR.responseText) : alert('Oops! Something went wrong.');
+    if (response['Response'] == 'False') {
+        $(".result").append(`<p class='error'>${response['Error']}</p>`);
+        return;
     }
 
-    const form = document.getElementById("movieSearch");
+}
 
-    form.addEventListener("submit", function (event) {
+window.addEventListener("load", function () {
+    const FORM = document.getElementById("movieSearch");
+
+    FORM.addEventListener("submit", function (event) {
         event.preventDefault();
-        sendData();
+
+        const FD = new FormData(FORM);
+
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.open('GET', `${API}&t=${FD.get('name')}&type=${FD.get('type')}`, true);
+        req.onload = function () {
+            (this.status == 200) ? printResponse(this.response) : alert('Oops! Something went wrong.');
+        };
+        req.send(null);
     });
 });

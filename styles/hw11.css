@@ -36,4 +36,24 @@ body {
   font-size: 30px;
   margin: 10px;
 }
+
+.result {
+  color: #183a37;
+  height: calc(100vh - 100px);
+}
+
+.error {
+  width: 100%;
+  height: 100%;
+  font-size: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=hw11.css.map */
