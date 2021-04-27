@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/hw11.css" />
+    <title>JS HW 11</title>
+  </head>
+  <body>
+    <form id="movieSearch">
+      <input
+        id="name"
+        name="name"
+        placeholder="Movie name"
+        class="input-field"
+      />
+      <select name="type" id="type" class="input-field">
+        <option value="movie">Movie</option>
+        <option value="series">Series</option>
+        <option value="episode">Episode</option>
+      </select>
+      <input type="submit" class="btn" value="Search" />
+    </form>
+    <div class="result"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/hw11.js"></script>
+  </body>
+</html>
