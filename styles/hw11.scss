@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efd6ac;
+}
+
+#movieSearch {
+  margin: auto;
+  background-color: #c44900;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 30px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #432534;
+  color: white;
+}
+
+.input-field {
+  font-size: 30px;
+  margin: 10px;
+}
