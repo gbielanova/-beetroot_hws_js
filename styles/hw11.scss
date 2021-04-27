@@ -44,3 +44,31 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.result-list {
+  margin-left: 60px;
+}
+
+.result-el {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+
+  &__header {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  &__year {
+    font-size: 20px;
+    font-style: italic;
+    color: #04151f;
+  }
+
+  &__poster {
+    max-height: 100px;
+  }
+}
