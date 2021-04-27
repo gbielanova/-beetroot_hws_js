@@ -41,6 +41,7 @@ function printPages(totalResults) {
 
     pages[0].addEventListener('click', function (event) {
         $(".result").empty();
+        currentPage = 1
 
         currentPage = event.target.innerText;
 
@@ -49,8 +50,8 @@ function printPages(totalResults) {
         req.open('GET', `${API}&s=${movName}&type=${movType}&page=${currentPage}`, true);
         req.onload = function () {
             if (this.status == 200) {
-                printPages(this.response['totalResults']);
                 printResponse(this.response)
+                printPages(this.response['totalResults']);
             } else alert('Oops! Something went wrong.');
         };
         req.send(null);
@@ -62,6 +63,7 @@ window.addEventListener("load", function () {
 
     FORM.addEventListener("submit", function (event) {
         $(".result").empty();
+        currentPage = 1;
         event.preventDefault();
 
         const FD = new FormData(FORM);
@@ -74,24 +76,10 @@ window.addEventListener("load", function () {
         req.open('GET', `${API}&s=${movName}&type=${movType}`, true);
         req.onload = function () {
             if (this.status == 200) {
-                printPages(this.response['totalResults']);
                 printResponse(this.response)
+                printPages(this.response['totalResults']);
             } else alert('Oops! Something went wrong.');
         };
         req.send(null);
     });
-
-    // debug
-    var req = new XMLHttpRequest();
-    req.responseType = 'json';
-
-    movName = 'blade';
-    movType = 'movie';
-
-    req.open('GET', `${API}&s=blade&type=movie`, true);
-    req.onload = function () {
-        printPages(this.response['totalResults']);
-        printResponse(this.response)
-    };
-    req.send(null);
 });
