@@ -26,6 +26,11 @@ body {
   color: white;
 }
 
+.btn-details {
+  font-size: 15px;
+  margin: 0;
+}
+
 .input-field {
   font-size: 30px;
   margin: 10px;
@@ -100,5 +105,24 @@ body {
   &__page:hover {
     cursor: pointer;
     color: #c44900;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__header {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  &__line {
+    font-size: 20px;
+    color: #04151f;
+    width: 80%;
+    text-align: center;
   }
 }

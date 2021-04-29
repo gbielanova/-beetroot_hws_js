@@ -10,8 +10,30 @@ function sendRequest() {
     req.open('GET', `${API}&s=${movName}&type=${movType}&page=${currentPage}`, true);
     req.onload = function () {
         if (this.status == 200) {
-            printResponse(this.response)
+            printResponse(this.response);
             printPages(this.response['totalResults']);
+        } else alert('Oops! Something went wrong.');
+    };
+    req.send(null);
+}
+
+function printDetails(id) {
+    var req = new XMLHttpRequest();
+    req.responseType = 'json';
+    req.open('GET', `${API}&i=${id}`, true);
+    req.onload = function () {
+        if (this.status == 200) {
+            let movie = this.response;
+            $(".details").empty();
+            $(".result").append(`
+                <article class="details">
+                    <header class="details__header">${movie['Title']}</header>
+                    <p class="details__line">${movie['Country']}</p>
+                    <p class="details__line">${movie['Awards']}</p>
+                    <p class="details__line">${movie['Plot']}</p>
+                </article>
+            `);
+
         } else alert('Oops! Something went wrong.');
     };
     req.send(null);
@@ -27,13 +49,15 @@ function printResponse(response) {
 
     response['Search'].forEach(element => {
         let poster = (element['Poster'] != 'N/A') ? `<img src="${element['Poster']}" alt="${element['Title']} poster" class="result-el__poster">` : '';
+        let imdbId = element['imdbID'];
 
         $(".result-list").append(`<li>      
                                         <aticle class="result-el">
                                             <div>
                                                 <header class="result-el__header">${element['Title']}</header>
                                                 <p class="result-el__year">${element['Year']}</p>
-                                            </div>
+                                                <button class="btn btn-details" onclick=printDetails("${imdbId}") >Details</button>
+                                            </div> 
                                             ${poster}
                                         </aticle>
                                     </li>`);
