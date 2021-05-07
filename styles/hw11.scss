@@ -58,7 +58,6 @@ body {
 .result-el {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px;
@@ -75,7 +74,8 @@ body {
   }
 
   &__poster {
-    max-height: 100px;
+    max-height: 120px;
+    margin: 0 20px;
   }
 }
 
@@ -125,4 +125,45 @@ body {
     width: 80%;
     text-align: center;
   }
+}
+
+.btn-heart {
+  background-color: grey;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  transform: rotate(-45deg);
+  width: 30px;
+  border: none;
+}
+
+.btn-heart:before,
+.btn-heart:after {
+  content: "";
+  background-color: grey;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.btn-heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.btn-heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.favorite {
+  background-color: red;
+}
+
+.favorite:before,
+.favorite:after {
+  background-color: red;
 }
