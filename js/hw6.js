@@ -80,7 +80,6 @@ printActualCircle()
 const MarkerUsedPerSymbol = 0.5;
 
 class Marker {
-    color;
     volume = 100;
 
     constructor(color) {
@@ -93,13 +92,13 @@ class Marker {
         }
 
         let textToPrint = String(text);
-        let symbolsToPrint = textToPrint.replace(' ', '').length;
+        let symbolsToPrint = textToPrint.replace(' ', '').length * MarkerUsedPerSymbol;
 
         if (symbolsToPrint <= this.volume) {
             this.volume -= symbolsToPrint;
         } else {
             let couldPrintText = '';
-            for (let i = 0; i < this.volume + textToPrint.split(' ').length - 1; i++) {
+            for (let i = 0; i < this.volume + (textToPrint.split(' ').length - 1) * MarkerUsedPerSymbol; i++) {
                 couldPrintText += textToPrint[i];
             }
             textToPrint = couldPrintText;
