@@ -29,6 +29,20 @@ section p {
   display: block;
 }
 
+.EmpTable {
+  border: 1px solid black;
+}
+
+.EmpTable__row--header {
+  background-color: grey;
+  color: white;
+}
+
+.EmpTable__column {
+  border: 1px solid black;
+  padding: 5px;
+}
+
 .edit__block--hidden {
   display: none;
 }
