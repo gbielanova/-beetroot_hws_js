@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="stylesheet" href="styles/styles10.css" />
+    <title>JS HW 10</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__about">
+        <h5 class="description">our featured work</h5>
+        <div class="plus"></div>
+      </div>
+      <div class="header__title">
+        <div class="triangle"></div>
+        <h1 class="title">
+          We create engaging experiences through creativity & craft
+        </h1>
+      </div>
+    </header>
+
+    <div class="slider">
+      <div class="slider__item slider__item1">
+        <div class="cover">
+          <h6 class="cover__text">Apex Magazine June Issue</h6>
+          <p class="cover__author">by Fabrizio Morra</p>
+        </div>
+      </div>
+      <div class="slider__item slider__item2">
+        <div class="cover">
+          <h6 class="cover__text">Item2</h6>
+          <p class="cover__author">by item2</p>
+        </div>
+      </div>
+      <div class="slider__item slider__item3">
+        <div class="cover">
+          <h6 class="cover__text">Item3</h6>
+          <p class="cover__author">by item23</p>
+        </div>
+      </div>
+      <div class="slider__item slider__item4">
+        <div class="cover">
+          <h6 class="cover__text">Item4</h6>
+          <p class="cover__author">by item4</p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    ></script>
+
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".slider").slick({
+          slidesToShow: 3,
+          arrows: true,
+        });
+      });
+
+      $(".slider").on("afterChange", function (event, slick, direction) {
+        $(".slick-current .cover").css("display", "block");
+      });
+
+      // need to turn off cover, otherwise all 4 items will be with cover after first round
+      $(".slider").on("beforeChange", function (event, slick, direction) {
+        $(".slick-active .cover").css("display", "none");
+      });
+
+      $(document).ready(function () {
+        $(".slick-current .cover").css("display", "block");
+      });
+    </script>
+  </body>
+</html>
