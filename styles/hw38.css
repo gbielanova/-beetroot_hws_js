@@ -7,6 +7,100 @@
           box-sizing: border-box;
 }
 
+.task38-1 {
+  height: 95vh;
+  background-color: #e2e7ec;
+  padding: 10px 30px;
+}
+
+.task38-1 .grid-container {
+  height: 100%;
+  width: 70%;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.task38-1 .grid-container article:nth-child(1) {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: left;
+  text-transform: uppercase;
+  color: #ffffff;
+  position: relative;
+  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, rgba(0, 0, 0, 0)), to(black)), url("../img/38.1/Layer_8.png");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, black), url("../img/38.1/Layer_8.png");
+}
+
+.task38-1 .grid-container article:nth-child(1) p {
+  opacity: 0.5;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.33px;
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+}
+
+.task38-1 .grid-container article:nth-child(1) h1 {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 70%;
+}
+
+.task38-1 .grid-container article {
+  background-color: #ffffff;
+  position: relative;
+}
+
+.task38-1 .grid-container article p {
+  color: #818181;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.33px;
+  position: absolute;
+  bottom: 170px;
+  left: 28px;
+}
+
+.task38-1 .grid-container article h2 {
+  color: #1d1d1d;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.55px;
+  position: absolute;
+  bottom: 85px;
+  left: 28px;
+}
+
+.task38-1 .grid-container article img:first-child {
+  width: 100%;
+  height: 50%;
+}
+
+.task38-1 .grid-container article img:last-child {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  bottom: 25px;
+  left: 28px;
+}
+
 .task38-2 .page1 {
   height: 95vh;
   margin: 3%;
