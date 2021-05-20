@@ -1,0 +1,154 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.task38-2 .page1 {
+  height: 95vh;
+  margin: 3%;
+}
+
+.task38-2 .page1 .grid-container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1.5fr 1.5fr 2fr;
+      grid-template-rows: 1.5fr 1.5fr 2fr;
+  gap: 10px;
+      grid-template-areas: "big big panel" "big big panel2" "panel3 panel4 panel5";
+}
+
+.task38-2 .page1 .big {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: big;
+  background-image: url(../img/1.jpg38-page1.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page1 .panel {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: panel;
+  background-image: url(../img/2.jpg38-page1.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page1 .panel2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: panel2;
+  background-image: url(../img/3.jpg38-page1.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page1 .panel3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: panel3;
+  background-image: url(../img/4.jpg38-page1.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page1 .panel4 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: panel4;
+  background-image: url(../img/5.jpg38-page1.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page1 .panel5 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: panel5;
+  background-image: url(../img/6.jpg38-page1.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 {
+  height: 60vh;
+  position: relative;
+}
+
+.task38-2 .page2 .grid-container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.task38-2 .page2 .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+}
+
+.task38-2 .page2 .panel1 {
+  background-image: url(../img/7.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel2 {
+  background-image: url(".././img/7.jpg38-page2 (1).jpg");
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel3 {
+  background-image: url(../img/8.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel4 {
+  background-image: url(../img/9.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel5 {
+  background-image: url(../img/10.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel6 {
+  background-image: url(../img/11.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel7 {
+  background-image: url(../img/12.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.task38-2 .page2 .panel8 {
+  background-image: url(../img/13.jpg38-page2.jpg);
+  background-position: top;
+  background-size: cover;
+}
+/*# sourceMappingURL=hw38.css.map */

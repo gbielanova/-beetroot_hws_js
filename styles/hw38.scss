@@ -1,0 +1,137 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.task38-2 {
+  .page1 {
+    height: 95vh;
+    margin: 3%;
+
+    .grid-container {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1.5fr 1.5fr 2fr;
+      gap: 10px;
+      grid-template-areas:
+        "big big panel"
+        "big big panel2"
+        "panel3 panel4 panel5";
+    }
+
+    .big {
+      grid-area: big;
+      background-image: url(../img/1.jpg38-page1.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel {
+      grid-area: panel;
+      background-image: url(../img/2.jpg38-page1.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel2 {
+      grid-area: panel2;
+      background-image: url(../img/3.jpg38-page1.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel3 {
+      grid-area: panel3;
+      background-image: url(../img/4.jpg38-page1.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel4 {
+      grid-area: panel4;
+      background-image: url(../img/5.jpg38-page1.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel5 {
+      grid-area: panel5;
+      background-image: url(../img/6.jpg38-page1.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+  }
+
+  .page2 {
+    height: 60vh;
+    position: relative;
+
+    .grid-container {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      background-color: #1a1a1a;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+    }
+
+    .panel1 {
+      background-image: url(../img/7.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel2 {
+      background-image: url(".././img/7.jpg38-page2\ \(1\).jpg");
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel3 {
+      background-image: url(../img/8.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel4 {
+      background-image: url(../img/9.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel5 {
+      background-image: url(../img/10.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel6 {
+      background-image: url(../img/11.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel7 {
+      background-image: url(../img/12.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+
+    .panel8 {
+      background-image: url(../img/13.jpg38-page2.jpg);
+      background-position: top;
+      background-size: cover;
+    }
+  }
+}
