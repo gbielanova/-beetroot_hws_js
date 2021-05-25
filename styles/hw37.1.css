@@ -1,0 +1,96 @@
+@-webkit-keyframes flip {
+  from {
+    -webkit-transform: translate(0, 0) rotateY(0deg);
+            transform: translate(0, 0) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: translate(320px, 0) rotateY(180deg);
+            transform: translate(320px, 0) rotateY(180deg);
+  }
+}
+
+@keyframes flip {
+  from {
+    -webkit-transform: translate(0, 0) rotateY(0deg);
+            transform: translate(0, 0) rotateY(0deg);
+  }
+  to {
+    -webkit-transform: translate(320px, 0) rotateY(180deg);
+            transform: translate(320px, 0) rotateY(180deg);
+  }
+}
+
+.task1 {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.level-up {
+  z-index: 2;
+}
+
+.suit {
+  height: 270px;
+  width: 270px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.rank {
+  font-size: 100px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 320px);
+}
+
+.flip-container,
+.front,
+.front-svg,
+.back {
+  width: 320px;
+  height: 480px;
+}
+
+/* flip speed goes here */
+.animate {
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+/* hide back of pane during swap */
+.front,
+.back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* back, initially hidden pane */
+.front {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+/*# sourceMappingURL=hw37.1.css.map */
