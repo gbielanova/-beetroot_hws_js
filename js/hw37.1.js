@@ -71,6 +71,6 @@ function addCard() {
 }
 
 function removeCard() {
-    let divs = document.getElementsByClassName('animate');
-    if (divs.length > 1) { divs[0].remove(); };
+    let blocks = document.getElementsByClassName('animate');
+    if (blocks.length > 1) { blocks[0].remove(); };
 }
