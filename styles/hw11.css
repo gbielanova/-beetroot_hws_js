@@ -75,9 +75,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -97,7 +94,8 @@ body {
 }
 
 .result-el__poster {
-  max-height: 100px;
+  max-height: 120px;
+  margin: 0 20px;
 }
 
 .result-pages {
@@ -165,5 +163,47 @@ body {
   color: #04151f;
   width: 80%;
   text-align: center;
+}
+
+.btn-heart {
+  background-color: grey;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 30px;
+  border: none;
+}
+
+.btn-heart:before,
+.btn-heart:after {
+  content: "";
+  background-color: grey;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.btn-heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.btn-heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.favorite {
+  background-color: red;
+}
+
+.favorite:before,
+.favorite:after {
+  background-color: red;
 }
 /*# sourceMappingURL=hw11.css.map */

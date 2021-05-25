@@ -1,8 +1,12 @@
 const API = 'https://www.omdbapi.com/?apikey=721371';
 const FORM = document.getElementById("movieSearch");
+const FAVORITE_CLASS = 'favorite';
+const KEY = 'favorites';
 let movName = '';
 let movType = '';
 let currentPage = 1;
+let storage = window.localStorage;
+let favoritesList = storage.getItem(KEY) ? storage.getItem(KEY).split(',') : [];
 
 function sendRequest() {
     var req = new XMLHttpRequest();
@@ -51,14 +55,17 @@ function printResponse(response) {
         let poster = (element['Poster'] != 'N/A') ? `<img src="${element['Poster']}" alt="${element['Title']} poster" class="result-el__poster">` : '';
         let imdbId = element['imdbID'];
 
+        let isFavorite = (favoritesList.indexOf(imdbId) < 0) ? '' : FAVORITE_CLASS;
+
         $(".result-list").append(`<li>      
                                         <aticle class="result-el">
+                                            <button class="btn btn-heart ${isFavorite}" onclick='toggleFavorite(this, "${imdbId}") '> </button>
+                                            ${poster}
                                             <div>
                                                 <header class="result-el__header">${element['Title']}</header>
                                                 <p class="result-el__year">${element['Year']}</p>
                                                 <button class="btn btn-details" onclick=printDetails("${imdbId}") >Details</button>
                                             </div> 
-                                            ${poster}
                                         </aticle>
                                     </li>`);
     });
@@ -79,6 +86,12 @@ function printPages(totalResults) {
         currentPage = event.target.innerText;
         sendRequest();
     })
+}
+
+function toggleFavorite(button, id) {
+    button.classList.toggle(FAVORITE_CLASS);
+    favoritesList.indexOf(id) < 0 ? favoritesList.push(id) : favoritesList.splice(favoritesList.indexOf(id), 1);
+    storage.setItem(KEY, favoritesList);
 }
 
 window.addEventListener("load", function () {
